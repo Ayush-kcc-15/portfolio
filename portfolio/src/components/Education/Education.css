@@ -1,0 +1,17 @@
+.education-section{
+ padding:100px 80px;
+ text-align:center;
+}
+
+.education-card{
+ max-width:700px;
+ margin:auto;
+ background:white;
+ padding:40px;
+ border-radius:20px;
+ box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+body.dark .education-card{
+ background:#111827;
+}

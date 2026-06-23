@@ -1,0 +1,36 @@
+.patent-section{
+ padding:100px 80px;
+ text-align:center;
+}
+
+.patent-section h4{
+ color:#2563eb;
+}
+
+.patent-section h2{
+ margin:15px 0 40px;
+ font-size:42px;
+}
+
+.patent-container{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:25px;
+}
+
+.patent-card{
+ background:white;
+ padding:35px;
+ border-radius:20px;
+ box-shadow:0 5px 20px rgba(0,0,0,.08);
+ border-left:6px solid #2563eb;
+}
+
+body.dark .patent-card{
+ background:#111827;
+}
+
+.patent-card p{
+ margin-top:10px;
+ color:#22c55e;
+}

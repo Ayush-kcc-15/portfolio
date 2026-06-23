@@ -10,11 +10,12 @@ import {
 } from "react-icons/fa";
 
 import {
- SiPython,
- SiJavascript,
- SiMongodb,
- SiAmazonwebservices
+  SiPython,
+  SiJavascript,
+  SiMongodb
 } from "react-icons/si";
+
+import { FaAws } from "react-icons/fa";
 
 function TechStack() {
 
@@ -28,7 +29,7 @@ function TechStack() {
     { icon: <FaHtml5 />, name: "HTML" },
     { icon: <FaCss3Alt />, name: "CSS" },
     { icon: <FaGitAlt />, name: "Git" },
-    { icon: <SiAmazonwebservices />, name: "AWS" },
+    { icon: <FaAws />, name: "AWS" },
   ];
 
   return (

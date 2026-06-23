@@ -1,0 +1,40 @@
+.cert-section{
+ padding:100px 80px;
+ text-align:center;
+}
+
+.cert-section h4{
+ color:#2563eb;
+}
+
+.cert-section h2{
+ margin:15px 0 50px;
+ font-size:42px;
+}
+
+.cert-card{
+ background:white;
+ height:180px;
+ border-radius:20px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ padding:20px;
+ box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+body.dark .cert-card{
+ background:#111827;
+}
+.swiper {
+  padding: 20px 10px 50px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #2563eb;
+}
+
+.swiper-pagination-bullet-active {
+  background: #2563eb;
+}

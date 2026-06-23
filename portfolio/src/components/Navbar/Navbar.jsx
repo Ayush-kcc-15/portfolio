@@ -19,13 +19,33 @@ function Navbar() {
       <ul className="nav-links">
 
         <li>Home</li>
-        <li>About</li>
-        <li>Skills</li>
-        <li>Projects</li>
-        <li>Patents</li>
-        <li>Certificates</li>
-        <li>Education</li>
-        <li>Contact</li>
+        <li>
+  <a href="#about">About</a>
+</li>
+        <li>
+  <a href="#skills">Skills</a>
+</li>
+
+        <li>
+  <a href="#projects">Projects</a>
+</li>
+
+<li>
+  <a href="#patents">Patents</a>
+</li>
+
+<li>
+  <a href="#certificates">Certificates</a>
+</li>
+
+<li>
+  <a href="#education">Education</a>
+</li>
+
+<li>
+  <a href="#contact">Contact</a>
+</li>
+        
 
       </ul>
 
