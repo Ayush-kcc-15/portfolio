@@ -1,17 +1,119 @@
-.education-section{
- padding:100px 80px;
- text-align:center;
+.education-section {
+  padding: 120px 8%;
+  position: relative;
 }
 
-.education-card{
- max-width:700px;
- margin:auto;
- background:white;
- padding:40px;
- border-radius:20px;
- box-shadow:0 5px 20px rgba(0,0,0,.08);
+.education-header {
+  text-align: center;
+  margin-bottom: 70px;
 }
 
-body.dark .education-card{
- background:#111827;
+.education-header span {
+  color: #2563eb;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.education-header h2 {
+  margin-top: 12px;
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--heading-color);
+}
+
+/* Timeline */
+
+.education-timeline {
+  max-width: 1000px;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.education-card {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+
+  background: var(--card-bg);
+
+  border: 1px solid var(--card-border);
+
+  border-radius: 24px;
+
+  padding: 30px;
+
+  transition: 0.35s ease;
+}
+
+.education-card:hover {
+  transform: translateY(-8px);
+
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 20px rgba(37,99,235,.2),
+    0 0 50px rgba(37,99,235,.08);
+}
+
+.education-year {
+  min-width: 150px;
+
+  background: rgba(37,99,235,.15);
+
+  border: 1px solid rgba(37,99,235,.3);
+
+  color: #60a5fa;
+
+  padding: 12px 18px;
+
+  border-radius: 12px;
+
+  text-align: center;
+
+  font-weight: 700;
+}
+
+.education-content h3 {
+  color: var(--heading-color);
+  font-size: 1.35rem;
+  margin-bottom: 8px;
+}
+
+.education-content h4 {
+  color: #2563eb;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.education-content p {
+  color: var(--text-color);
+}
+
+/* Light Mode */
+
+body:not(.dark) .education-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .education-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .education-year {
+    min-width: auto;
+    width: 100%;
+  }
+
+  .education-header h2 {
+    font-size: 2.2rem;
+  }
 }

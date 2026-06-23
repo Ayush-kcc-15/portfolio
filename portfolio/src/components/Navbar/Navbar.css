@@ -1,95 +1,221 @@
 .navbar {
-  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  padding: 18px 8%;
 
   display: flex;
-
+  align-items: center;
   justify-content: space-between;
 
-  align-items: center;
-
-  padding: 0 80px;
-
-  position: sticky;
-
-  top: 0;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 
   z-index: 1000;
 
-  backdrop-filter: blur(10px);
-
-  background: rgba(255,255,255,.8);
-
-  border-bottom: 1px solid #ddd;
+  transition: all 0.4s ease;
 }
 
-.dark .navbar {
-  background: rgba(5,10,25,.9);
+/* DARK MODE */
 
-  border-bottom: 1px solid #222;
+.navbar.dark {
+  background: rgba(2, 8, 23, 0.92);
+  border-bottom: 1px solid rgba(255,255,255,.08);
 }
 
-.logo {
-  font-size: 28px;
-
-  font-weight: bold;
-
+.navbar.dark .logo {
   color: #2563eb;
 }
+
+.navbar.dark .nav-links li a {
+  color: white;
+}
+
+.navbar.dark .menu-icon {
+  color: white;
+}
+
+/* LIGHT MODE */
+
+.navbar.light {
+  background: rgba(255,255,255,0.92);
+  border-bottom: 1px solid rgba(0,0,0,.08);
+}
+
+.navbar.light .logo {
+  color: #2563eb;
+}
+
+.navbar.light .nav-links li a {
+  color: #111827;
+}
+
+.navbar.light .menu-icon {
+  color: #111827;
+}
+
+/* LOGO */
+
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* NAV LINKS */
 
 .nav-links {
   display: flex;
-
+  gap: 35px;
   list-style: none;
-
-  gap: 25px;
 }
 
-.nav-links li {
-  cursor: pointer;
-
+.nav-links li a {
+  text-decoration: none;
   font-weight: 500;
+
+  position: relative;
+
+  transition: all .3s ease;
 }
 
-.nav-links li:hover {
+.nav-links li a:hover {
   color: #2563eb;
 }
 
-.nav-right {
-  display: flex;
+.nav-links li a::after {
+  content: "";
 
-  gap: 15px;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
 
-  align-items: center;
+  width: 0;
+  height: 2px;
+
+  background: #2563eb;
+
+  transition: 0.3s;
 }
 
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* RIGHT SIDE */
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* THEME BUTTON */
+
 .theme-btn {
-  width: 45px;
-
-  height: 45px;
-
-  border-radius: 50%;
+  width: 50px;
+  height: 50px;
 
   border: none;
+  border-radius: 50%;
 
   cursor: pointer;
 
   font-size: 18px;
+
+  transition: all .3s ease;
 }
 
-.resume-btn {
-  background: #2563eb;
+.navbar.dark .theme-btn {
+  background: white;
+  color: black;
+}
 
+.navbar.light .theme-btn {
+  background: #111827;
+  color: white;
+}
+
+.theme-btn:hover {
+  transform: rotate(180deg);
+
+  box-shadow:
+    0 0 15px #2563eb,
+    0 0 30px #2563eb;
+}
+
+/* RESUME BUTTON */
+
+.nav-resume-btn {
+  text-decoration: none;
+
+  background: #2563eb;
   color: white;
 
-  border: none;
+  padding: 14px 24px;
 
-  padding: 12px 20px;
+  border-radius: 12px;
 
-  border-radius: 10px;
+  font-weight: 600;
 
+  transition: all .3s ease;
+}
+
+.nav-resume-btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 0 15px #2563eb,
+    0 0 30px #2563eb;
+}
+
+/* HAMBURGER */
+
+.menu-icon {
+  display: none;
+  font-size: 26px;
   cursor: pointer;
 }
 
-.resume-btn:hover {
-  background: #1d4ed8;
+/* MOBILE */
+
+@media (max-width: 992px) {
+
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+
+    top: 90px;
+    left: -100%;
+
+    width: 100%;
+
+    flex-direction: column;
+
+    text-align: center;
+
+    padding: 30px 0;
+
+    transition: .4s ease;
+  }
+
+  .navbar.dark .nav-links {
+    background: #020817;
+  }
+
+  .navbar.light .nav-links {
+    background: white;
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  .nav-right {
+    display: none;
+  }
 }

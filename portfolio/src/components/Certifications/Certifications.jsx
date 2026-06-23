@@ -2,17 +2,15 @@ import { useState } from "react";
 import "./Certifications.css";
 
 function Certifications() {
-
   const [selected, setSelected] = useState("AWS");
 
   const certifications = {
-
     AWS: [
       "Fundamentals of ML & AI",
       "AWS Billing and Cost Management",
       "Build with Amazon EC2",
       "AWS Cloud Practitioner",
-      "AWS CLI Basics"
+      "AWS CLI Basics",
     ],
 
     IBM: [
@@ -20,14 +18,14 @@ function Certifications() {
       "Cybersecurity: On the Offense",
       "Ethical AI",
       "Foundations in Generative AI",
-      "Introduction to LLMs"
+      "Introduction to LLMs",
     ],
 
     Microsoft: [
       "Describe Cloud Services",
       "Cloud Computing",
       "Cloud Infrastructure",
-      "Cloud Service Types"
+      "Cloud Service Types",
     ],
 
     Unstop: [
@@ -35,51 +33,62 @@ function Certifications() {
       "Cloud Computing with AI",
       "Cybersecurity Mastery",
       "GitHub Workflow Mastery",
-      "HackCraft 3.0"
+      "HackCraft 3.0",
     ],
 
-    HP: [
+    HPLife: [
       "AI for Beginners",
-      "Critical Thinking in AI Era"
-    ]
+      "Critical Thinking in AI Era",
+    ],
   };
 
   return (
-    <section className="cert-section">
+    <section
+      id="certificates"
+      className="cert-section"
+    >
+      {/* HEADER */}
+      <div className="cert-header">
+        <span>CERTIFICATIONS</span>
+        <h2>Professional Certifications</h2>
+      </div>
 
-      <h2>Certifications</h2>
-
+      {/* FILTER BUTTONS */}
       <div className="company-buttons">
-
         {Object.keys(certifications).map((company) => (
-
           <button
             key={company}
-            onClick={() => setSelected(company)}
+            className={
+              selected === company
+                ? "active"
+                : ""
+            }
+            onClick={() =>
+              setSelected(company)
+            }
           >
             {company}
           </button>
-
         ))}
-
       </div>
 
+      {/* CERTIFICATE GRID */}
       <div className="certificate-list">
-
         {certifications[selected].map(
-          (item,index) => (
+          (item, index) => (
+            <div
+              className="certificate-card"
+              key={index}
+            >
+              <h3>{item}</h3>
 
-          <div
-            className="certificate-card"
-            key={index}
-          >
-            {item}
-          </div>
-
-        ))}
-
+              <span className="certificate-company">
+                {selected}
+              </span>
+            </div>
+          )
+        )}
       </div>
-
     </section>
   );
 }

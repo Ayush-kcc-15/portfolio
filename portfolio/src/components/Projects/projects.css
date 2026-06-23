@@ -1,76 +1,308 @@
-.projects-section{
- padding:100px 80px;
+.projects-section {
+  padding: 120px 8%;
+  position: relative;
+  overflow: hidden;
 }
 
-.projects-section h4{
- color:#2563eb;
- text-align:center;
+/* BACKGROUND GLOW */
+
+.projects-section::before {
+  content: "";
+
+  position: absolute;
+
+  width: 700px;
+  height: 700px;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  background: radial-gradient(
+    circle,
+    rgba(37, 99, 235, 0.12),
+    transparent 70%
+  );
+
+  filter: blur(120px);
+
+  z-index: -1;
 }
 
-.projects-section h2{
- text-align:center;
- margin:15px 0 50px;
- font-size:42px;
+/* HEADER */
+
+.projects-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  margin-bottom: 70px;
 }
 
-.projects-grid{
- display:grid;
- grid-template-columns:repeat(3,1fr);
- gap:25px;
+.projects-header span {
+  color: #2563eb;
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
 }
 
-.project-card{
- background:rgba(255,255,255,.05);
+.projects-header h2 {
+  margin-top: 12px;
 
-backdrop-filter:blur(20px);
+  font-size: 3.2rem;
+  font-weight: 800;
 
-border:1px solid rgba(255,255,255,.08);
-
-box-shadow:
-0 10px 30px rgba(0,0,0,.2);
+  color: var(--heading-color);
 }
 
-body.dark .project-card{
- background:#111827;
+/* GRID */
+
+.projects-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(380px, 1fr));
+
+  gap: 35px;
+
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-.project-card:hover{
- transform:translateY(-8px);
+/* CARD */
+
+.project-card {
+  background: var(--card-bg);
+
+  border: 1px solid var(--card-border);
+
+  border-radius: 24px;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  transition: all 0.4s ease;
+
+  position: relative;
 }
 
-.project-card img{
- width:100%;
- height:220px;
- object-fit:cover;
+.project-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  top: -80px;
+  right: -80px;
+
+  background: radial-gradient(
+    circle,
+    rgba(37, 99, 235, 0.18),
+    transparent
+  );
+
+  transition: 0.4s;
 }
 
-.project-content{
- padding:20px;
+.project-card:hover::before {
+  transform: scale(1.5);
 }
 
-.project-content h3{
- margin-bottom:10px;
+.project-card:hover {
+  transform: translateY(-12px);
+
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 25px rgba(37, 99, 235, 0.25),
+    0 0 60px rgba(37, 99, 235, 0.15);
 }
 
-.tags{
- display:flex;
- gap:10px;
- flex-wrap:wrap;
- margin:15px 0;
+/* IMAGE */
+
+.project-image {
+  overflow: hidden;
 }
 
-.tags span{
- background:#2563eb;
- color:white;
- padding:6px 12px;
- border-radius:20px;
- font-size:12px;
+.project-image img {
+  width: 100%;
+  height: 260px;
+
+  object-fit: cover;
+
+  transition: 0.5s ease;
 }
 
-.project-content button{
- border:none;
- background:none;
- color:#2563eb;
- cursor:pointer;
- font-weight:600;
+.project-card:hover img {
+  transform: scale(1.08);
+}
+
+/* CONTENT */
+
+.project-content {
+  padding: 25px;
+
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+}
+
+.project-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+
+  color: var(--heading-color);
+
+  margin-bottom: 12px;
+}
+
+.project-content p {
+  color: var(--text-color);
+
+  line-height: 1.7;
+
+  margin-bottom: 20px;
+}
+
+/* TAGS */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-bottom: 25px;
+}
+
+.tags span {
+  background:
+    rgba(37, 99, 235, 0.15);
+
+  border:
+    1px solid rgba(37, 99, 235, 0.3);
+
+  color: #60a5fa;
+
+  padding: 8px 14px;
+
+  border-radius: 25px;
+
+  font-size: 0.9rem;
+}
+
+/* BUTTONS */
+
+.project-buttons {
+  display: flex;
+
+  gap: 12px;
+
+  margin-top: auto;
+}
+
+.project-buttons a {
+  text-decoration: none;
+}
+
+.github-btn,
+.demo-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 12px 18px;
+
+  border-radius: 12px;
+
+  font-weight: 600;
+
+  transition: 0.3s ease;
+}
+
+/* ===== GITHUB BUTTON ===== */
+
+.github-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 12px 18px;
+
+  border-radius: 12px;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition: 0.3s ease;
+}
+
+/* DARK MODE */
+
+body.dark .github-btn {
+  border: 1px solid #2563eb;
+  color: white;
+  background: transparent;
+}
+
+/* LIGHT MODE */
+
+body:not(.dark) .github-btn {
+  border: 1px solid #2563eb;
+  color: #2563eb;
+  background: white;
+}
+
+body:not(.dark) .github-btn svg {
+  color: #2563eb;
+}
+
+/* HOVER */
+
+.github-btn:hover {
+  background: #2563eb;
+  color: white;
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 0 15px #2563eb,
+    0 0 30px rgba(37, 99, 235, 0.4);
+}
+
+.github-btn:hover svg {
+  color: white;
+}
+
+/* MOBILE */
+
+@media (max-width: 992px) {
+  .projects-section {
+    padding: 90px 6%;
+  }
+
+  .projects-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-buttons {
+    flex-direction: column;
+  }
 }

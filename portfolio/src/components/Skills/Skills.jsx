@@ -1,44 +1,47 @@
 import "./Skills.css";
 
+import {
+  FaJava,
+  FaPython,
+  FaReact,
+  FaNodeJs,
+  FaHtml5,
+  FaCss3Alt,
+  FaGitAlt,
+  FaAws,
+} from "react-icons/fa";
+
+const skills = [
+  { icon: <FaJava />, name: "Java" },
+  { icon: <FaPython />, name: "Python" },
+  { icon: <FaReact />, name: "React" },
+  { icon: <FaNodeJs />, name: "Node.js" },
+  { icon: <FaHtml5 />, name: "HTML" },
+  { icon: <FaCss3Alt />, name: "CSS" },
+  { icon: <FaGitAlt />, name: "Git" },
+  { icon: <FaAws />, name: "AWS" },
+  { icon: <FaAws />, name: "Cloud" },
+];
+
 function Skills() {
-
-  const skills = [
-    "Java",
-    "Python",
-    "C",
-    "JavaScript",
-    "React",
-    "Node.js",
-    "HTML",
-    "CSS",
-    "MongoDB",
-    "Git",
-    "AWS",
-    "Cyber Security"
-  ];
-
   return (
-   <section id="skills" className="skills-section">
+    <section id="skills" className="skills">
 
-      <h4>SKILLS</h4>
-
-      <h2>
-        Technical Expertise
-      </h2>
+      <div className="skills-header">
+        <span>SKILLS</span>
+        <h2>Technical Expertise</h2>
+      </div>
 
       <div className="skills-grid">
+        {skills.map((skill, index) => (
+          <div className="skill-card" key={index}>
+            <div className="skill-icon">
+              {skill.icon}
+            </div>
 
-        {skills.map((skill,index) => (
-
-          <div
-            className="skill-card"
-            key={index}
-          >
-            {skill}
+            <h3>{skill.name}</h3>
           </div>
-
         ))}
-
       </div>
 
     </section>
