@@ -46,12 +46,12 @@ function Navbar() {
         </button>
 
         <a
-          href="/resume.pdf"
-          download
-          className="nav-resume-btn"
-        >
-          Download Resume
-        </a>
+  href="/Ayush_Kumar_Resume.pdf"
+  download
+  className="resume-btn"
+>
+  Download Resume
+</a>
 
       </div>
 

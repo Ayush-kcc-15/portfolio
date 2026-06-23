@@ -338,3 +338,23 @@
     font-size: 26px;
   }
 }
+.credly-btn {
+  padding: 14px 24px;
+  background: #ff6b00;
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.credly-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(255, 107, 0, 0.4);
+}
+
+.socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

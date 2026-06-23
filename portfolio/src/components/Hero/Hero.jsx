@@ -17,6 +17,8 @@ import {
   FaPython,
 } from "react-icons/fa";
 
+import { SiCredly } from "react-icons/si";
+
 function Hero() {
   const { darkMode } = useContext(ThemeContext);
 
@@ -57,8 +59,8 @@ function Hero() {
 
         <p>
           Passionate about building smart solutions with code.
-          I love Web Development, Cloud Computing, AI and
-          solving real-world problems.
+          I love Web Development, Cloud Computing, AI,
+          Cyber Security and solving real-world problems.
         </p>
 
         <div className="hero-buttons">
@@ -76,6 +78,15 @@ function Hero() {
           >
             Contact Me
           </a>
+
+          <a
+            href="https://www.credly.com/users/ayush-kumar.bfdaf45e"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="credly-btn"
+          >
+            View Badges
+          </a>
         </div>
 
         <div className="socials">
@@ -83,6 +94,7 @@ function Hero() {
             href="https://www.linkedin.com/in/ayush-kumar-659ab0329"
             target="_blank"
             rel="noopener noreferrer"
+            title="LinkedIn"
           >
             <FaLinkedin />
           </a>
@@ -91,11 +103,24 @@ function Hero() {
             href="https://github.com/Ayush-kcc-15"
             target="_blank"
             rel="noopener noreferrer"
+            title="GitHub"
           >
             <FaGithub />
           </a>
 
-          <a href="mailto:ayush.kccitm@gmail.com">
+          <a
+            href="https://www.credly.com/users/ayush-kumar.bfdaf45e"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Credly"
+          >
+            <SiCredly />
+          </a>
+
+          <a
+            href="mailto:ayush.kccitm@gmail.com"
+            title="Email"
+          >
             <FaEnvelope />
           </a>
         </div>

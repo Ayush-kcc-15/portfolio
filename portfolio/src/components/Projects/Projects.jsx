@@ -1,4 +1,7 @@
 import "./Projects.css";
+import agree2metImg from "../../assets/agree2met.png";
+import amazonCloneImg from "../../assets/amazon-clone.jpeg";
+import chatbotImg from "../../assets/ai-chatbot.png";
 
 
 import {
@@ -7,13 +10,13 @@ import {
 } from "react-icons/fa";
 
 function Projects() {
- const projects = [
+const projects = [
   {
     title: "Agree2Met",
 
     desc: "Smart Agreement Management SaaS Platform with secure agreements, digital verification, AI-powered workflows, escrow support, and modern dashboard experience.",
 
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
+    image: agree2metImg,
 
     tech: [
       "React",
@@ -30,7 +33,7 @@ function Projects() {
 
     desc: "A fully responsive Amazon-inspired e-commerce platform featuring product listings, cart management, user authentication, and modern UI built with React.",
 
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d",
+    image: amazonCloneImg,
 
     tech: [
       "React",
@@ -47,7 +50,7 @@ function Projects() {
 
     desc: "Intelligent AI-powered chatbot capable of answering queries, providing instant responses, and enhancing user interaction using NLP and machine learning techniques.",
 
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995",
+    image: chatbotImg,
 
     tech: [
       "Python",
@@ -59,6 +62,7 @@ function Projects() {
     demo: "#",
   },
 ];
+
 
   return (
     <section
