@@ -1,0 +1,95 @@
+.navbar {
+  height: 80px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 0 80px;
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 1000;
+
+  backdrop-filter: blur(10px);
+
+  background: rgba(255,255,255,.8);
+
+  border-bottom: 1px solid #ddd;
+}
+
+.dark .navbar {
+  background: rgba(5,10,25,.9);
+
+  border-bottom: 1px solid #222;
+}
+
+.logo {
+  font-size: 28px;
+
+  font-weight: bold;
+
+  color: #2563eb;
+}
+
+.nav-links {
+  display: flex;
+
+  list-style: none;
+
+  gap: 25px;
+}
+
+.nav-links li {
+  cursor: pointer;
+
+  font-weight: 500;
+}
+
+.nav-links li:hover {
+  color: #2563eb;
+}
+
+.nav-right {
+  display: flex;
+
+  gap: 15px;
+
+  align-items: center;
+}
+
+.theme-btn {
+  width: 45px;
+
+  height: 45px;
+
+  border-radius: 50%;
+
+  border: none;
+
+  cursor: pointer;
+
+  font-size: 18px;
+}
+
+.resume-btn {
+  background: #2563eb;
+
+  color: white;
+
+  border: none;
+
+  padding: 12px 20px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+}
+
+.resume-btn:hover {
+  background: #1d4ed8;
+}

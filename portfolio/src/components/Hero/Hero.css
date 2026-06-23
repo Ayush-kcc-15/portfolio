@@ -1,0 +1,121 @@
+.hero {
+  min-height: 90vh;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 60px 80px;
+}
+
+.hero-left {
+  flex: 1;
+}
+
+.hero-left h4 {
+  color: #2563eb;
+
+  margin-bottom: 15px;
+}
+
+.hero-left h1 {
+  font-size: 75px;
+}
+
+.hero-left h1 span {
+  color: #2563eb;
+}
+
+.hero-left h2 {
+  margin-top: 10px;
+
+  font-size: 35px;
+}
+
+.roles {
+  display: flex;
+
+  gap: 15px;
+
+  margin: 20px 0;
+}
+
+.hero-left p {
+  max-width: 550px;
+
+  line-height: 1.8;
+}
+
+.hero-buttons {
+  margin-top: 30px;
+
+  display: flex;
+
+  gap: 20px;
+}
+
+.hero-buttons button {
+  padding: 14px 24px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  background: #2563eb;
+
+  color: white;
+}
+
+.contact-btn {
+  background: transparent !important;
+
+  border: 2px solid #2563eb !important;
+
+  color: #2563eb !important;
+}
+
+.socials {
+  display: flex;
+
+  gap: 20px;
+
+  font-size: 28px;
+
+  margin-top: 40px;
+}
+
+.hero-right {
+  flex: 1;
+
+  position: relative;
+
+  display: flex;
+
+  justify-content: center;
+}
+
+.circle {
+  width: 450px;
+
+  height: 450px;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+
+  opacity: .15;
+
+  position: absolute;
+}
+
+.hero-right img {
+  width: 500px;
+
+  position: relative;
+
+  z-index: 10;
+}

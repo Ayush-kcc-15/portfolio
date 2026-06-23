@@ -1,0 +1,30 @@
+.stats-section {
+  padding: 80px;
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  gap: 20px;
+}
+
+.stat-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,.08);
+}
+
+body.dark .stat-card {
+  background: #111827;
+}
+
+.stat-card h2 {
+  color: #2563eb;
+  font-size: 40px;
+}
+
+.stat-card p {
+  margin-top: 10px;
+}

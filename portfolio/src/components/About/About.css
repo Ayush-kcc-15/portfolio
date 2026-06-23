@@ -1,0 +1,39 @@
+.about-section {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  padding: 100px 80px;
+}
+
+.about-image img {
+  width: 400px;
+  border-radius: 25px;
+}
+
+.about-content {
+  flex: 1;
+}
+
+.about-content h4 {
+  color: #2563eb;
+  margin-bottom: 15px;
+}
+
+.about-content h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.about-content button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+}
