@@ -27,3 +27,13 @@ body.dark {
 button {
   transition: .3s;
 }
+.project-card{
+ transition:.4s;
+}
+
+.project-card:hover{
+ transform:translateY(-10px);
+
+ box-shadow:
+ 0 20px 40px rgba(37,99,235,.3);
+}

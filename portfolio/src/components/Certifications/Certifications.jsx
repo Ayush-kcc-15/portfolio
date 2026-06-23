@@ -1,67 +1,85 @@
+import { useState } from "react";
 import "./Certifications.css";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
-
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-
 function Certifications() {
-  const certs = [
-    "IBM Generative AI",
-    "IBM Prompt Engineering",
-    "IBM Ethical AI",
-    "IBM LLM Fundamentals",
-    "AWS EC2",
-    "Microsoft Cloud Computing",
-    "HackCraft 3.0",
-  ];
+
+  const [selected, setSelected] = useState("AWS");
+
+  const certifications = {
+
+    AWS: [
+      "Fundamentals of ML & AI",
+      "AWS Billing and Cost Management",
+      "Build with Amazon EC2",
+      "AWS Cloud Practitioner",
+      "AWS CLI Basics"
+    ],
+
+    IBM: [
+      "Intelligent by Design",
+      "Cybersecurity: On the Offense",
+      "Ethical AI",
+      "Foundations in Generative AI",
+      "Introduction to LLMs"
+    ],
+
+    Microsoft: [
+      "Describe Cloud Services",
+      "Cloud Computing",
+      "Cloud Infrastructure",
+      "Cloud Service Types"
+    ],
+
+    Unstop: [
+      "AWS with AI",
+      "Cloud Computing with AI",
+      "Cybersecurity Mastery",
+      "GitHub Workflow Mastery",
+      "HackCraft 3.0"
+    ],
+
+    HP: [
+      "AI for Beginners",
+      "Critical Thinking in AI Era"
+    ]
+  };
 
   return (
-    <section
-      id="certificates"
-      className="cert-section"
-    >
-      <h4>CERTIFICATIONS</h4>
+    <section className="cert-section">
 
-      <h2>My Certifications</h2>
+      <h2>Certifications</h2>
 
-      <Swiper
-        modules={[
-          Autoplay,
-          Navigation,
-          Pagination,
-        ]}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        navigation={true}
-        pagination={{ clickable: true }}
-        loop={true}
-        spaceBetween={20}
-        breakpoints={{
-          320: {
-            slidesPerView: 1,
-          },
-          768: {
-            slidesPerView: 2,
-          },
-          1024: {
-            slidesPerView: 4,
-          },
-        }}
-      >
-        {certs.map((cert, index) => (
-          <SwiperSlide key={index}>
-            <div className="cert-card">
-              <h3>{cert}</h3>
-            </div>
-          </SwiperSlide>
+      <div className="company-buttons">
+
+        {Object.keys(certifications).map((company) => (
+
+          <button
+            key={company}
+            onClick={() => setSelected(company)}
+          >
+            {company}
+          </button>
+
         ))}
-      </Swiper>
+
+      </div>
+
+      <div className="certificate-list">
+
+        {certifications[selected].map(
+          (item,index) => (
+
+          <div
+            className="certificate-card"
+            key={index}
+          >
+            {item}
+          </div>
+
+        ))}
+
+      </div>
+
     </section>
   );
 }

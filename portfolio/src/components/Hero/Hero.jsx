@@ -1,87 +1,137 @@
 import "./Hero.css";
-
 import profile from "../../assets/hero.png";
-<img src={profile} alt="Ayush Kumar" />
+
+import { TypeAnimation } from "react-type-animation";
+import { motion } from "framer-motion";
+import { useContext } from "react";
+
+import { ThemeContext } from "../../context/ThemeContext";
 
 import {
   FaGithub,
   FaLinkedin,
-  FaEnvelope
+  FaEnvelope,
+  FaReact,
+  FaNodeJs,
+  FaJava,
+  FaPython,
 } from "react-icons/fa";
 
 function Hero() {
+  const { darkMode } = useContext(ThemeContext);
+
   return (
-    <section className="hero">
-
-      <div className="hero-left">
-
+    <section className={`hero ${darkMode ? "dark" : "light"}`}>
+      
+      {/* LEFT SIDE */}
+      <motion.div
+        className="hero-left"
+        initial={{ opacity: 0, x: -80 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1 }}
+      >
         <h4>Hello, I'm 👋</h4>
 
         <h1>
           Ayush <span>Kumar</span>
         </h1>
 
-        <h2>
-          B.Tech CSE Student
-        </h2>
+        <h2>B.Tech CSE Student</h2>
 
         <div className="roles">
-
-          <span>Developer</span>
-
-          <span>|</span>
-
-          <span>Innovator</span>
-
-          <span>|</span>
-
-          <span>Problem Solver</span>
-
+          <TypeAnimation
+            sequence={[
+              "Full Stack Developer",
+              2000,
+              "Cloud Enthusiast",
+              2000,
+              "Cyber Security Learner",
+              2000,
+              "AI Explorer",
+              2000,
+            ]}
+            wrapper="span"
+            repeat={Infinity}
+          />
         </div>
 
         <p>
-          Passionate about building smart
-          solutions with code. I love Web
-          Development, Cloud Computing,
-          AI and solving real-world
-          problems.
+          Passionate about building smart solutions with code.
+          I love Web Development, Cloud Computing, AI and
+          solving real-world problems.
         </p>
 
         <div className="hero-buttons">
-
-          <button>
+          <a
+            href="/resume.pdf"
+            download
+            className="resume-btn"
+          >
             Download Resume
-          </button>
+          </a>
 
-          <button className="contact-btn">
+          <a
+            href="#contact"
+            className="contact-btn"
+          >
             Contact Me
-          </button>
-
+          </a>
         </div>
 
         <div className="socials">
+          <a
+            href="https://www.linkedin.com/in/ayush-kumar-659ab0329"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedin />
+          </a>
 
-          <FaLinkedin />
+          <a
+            href="https://github.com/Ayush-kcc-15"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaGithub />
+          </a>
 
-          <FaGithub />
+          <a href="mailto:ayush.kccitm@gmail.com">
+            <FaEnvelope />
+          </a>
+        </div>
+      </motion.div>
 
-          <FaEnvelope />
+      {/* RIGHT SIDE */}
+      <motion.div
+        className="hero-right"
+        initial={{ opacity: 0, x: 80 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <div className="hero-glow"></div>
 
+        <div className="floating-icon react">
+          <FaReact />
         </div>
 
-      </div>
+        <div className="floating-icon node">
+          <FaNodeJs />
+        </div>
 
-      <div className="hero-right">
+        <div className="floating-icon java">
+          <FaJava />
+        </div>
 
-        <div className="circle"></div>
+        <div className="floating-icon python">
+          <FaPython />
+        </div>
 
         <img
           src={profile}
-          alt=""
+          alt="Ayush Kumar"
+          className="hero-image"
         />
-
-      </div>
-
+      </motion.div>
     </section>
   );
 }

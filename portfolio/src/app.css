@@ -1,0 +1,19 @@
+body::before{
+ content:"";
+
+ position:fixed;
+
+ width:500px;
+ height:500px;
+
+ background:#2563eb;
+
+ filter:blur(250px);
+
+ opacity:.15;
+
+ top:-100px;
+ right:-100px;
+
+ z-index:-1;
+}

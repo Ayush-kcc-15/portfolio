@@ -1,4 +1,13 @@
 import "./Stats.css";
+import CountUp from "react-countup";
+
+<h2>
+ <CountUp
+   end={8.8}
+   duration={3}
+   decimals={1}
+ />
+</h2>
 
 function Stats() {
   const stats = [

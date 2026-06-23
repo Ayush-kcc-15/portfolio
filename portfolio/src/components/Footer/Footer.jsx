@@ -5,12 +5,17 @@ function Footer() {
     <footer className="footer">
 
       <p>
-        © 2026 Ayush Kumar.
-        All Rights Reserved.
+       © 2026 Ayush Kumar
+
+B.Tech CSE Student | Developer | Innovator
+
+Greater Noida, Uttar Pradesh, India
+ 
       </p>
 
       <p>
-        Designed & Built with ❤️
+        
+      LinkedIn • GitHub • Email
       </p>
 
     </footer>
