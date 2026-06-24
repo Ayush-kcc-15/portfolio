@@ -6,7 +6,7 @@ function Education() {
       year: "2024 - 2028",
       title: "B.Tech Computer Science & Engineering",
       institute: "KCC Institute of Technology & Management",
-      score: "CGPA: 8.8 / 10",
+      score: "SGPA: 8.8 / 10",
     },
 
     {

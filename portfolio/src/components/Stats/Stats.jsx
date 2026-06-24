@@ -2,7 +2,7 @@ import "./Stats.css";
 
 function Stats() {
   const stats = [
-    { number: "8.8", label: "CGPA" },
+    { number: "8.8", label: "SGPA" },
     { number: "5+", label: "Projects" },
     { number: "4", label: "Patents" },
     { number: "20+", label: "Certificates" },
