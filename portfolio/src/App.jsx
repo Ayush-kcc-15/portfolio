@@ -5,7 +5,7 @@ import About from "./components/About/About";
 import Skills from "./components/Skills/Skills";
 import TechStack from "./components/Techstack/Techstack";
 import Projects from "./components/Projects/Projects";
-import Patents from "./components/patents/patents";
+import Patents from "./components/Patents/patents";
 import Certifications from "./components/Certifications/Certifications";
 import Achievements from "./components/Achievements/Achievements";
 import Education from "./components/Education/Education";
