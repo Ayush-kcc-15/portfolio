@@ -1,195 +1,42 @@
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
+/* ACTIONS */
 
-  width: 100%;
-  padding: 18px 8%;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-
-  z-index: 1000;
-
-  transition: all 0.4s ease;
-}
-
-/* DARK MODE */
-
-.navbar.dark {
-  background: rgba(2, 8, 23, 0.92);
-  border-bottom: 1px solid rgba(255,255,255,.08);
-}
-
-.navbar.dark .logo {
-  color: #2563eb;
-}
-
-.navbar.dark .nav-links li a {
-  color: white;
-}
-
-.navbar.dark .menu-icon {
-  color: white;
-}
-
-/* LIGHT MODE */
-
-.navbar.light {
-  background: rgba(255,255,255,0.92);
-  border-bottom: 1px solid rgba(0,0,0,.08);
-}
-
-.navbar.light .logo {
-  color: #2563eb;
-}
-
-.navbar.light .nav-links li a {
-  color: #111827;
-}
-
-.navbar.light .menu-icon {
-  color: #111827;
-}
-
-/* LOGO */
-
-.logo {
-  font-size: 2rem;
-  font-weight: 700;
-}
-
-/* NAV LINKS */
-
-.nav-links {
-  display: flex;
-  gap: 35px;
-  list-style: none;
-}
-
-.nav-links li a {
-  text-decoration: none;
-  font-weight: 500;
-
-  position: relative;
-
-  transition: all .3s ease;
-}
-
-.nav-links li a:hover {
-  color: #2563eb;
-}
-
-.nav-links li a::after {
-  content: "";
-
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-
-  width: 0;
-  height: 2px;
-
-  background: #2563eb;
-
-  transition: 0.3s;
-}
-
-.nav-links li a:hover::after {
-  width: 100%;
-}
-
-/* RIGHT SIDE */
-
-.nav-right {
+.navbar-actions {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-/* THEME BUTTON */
-
-.theme-btn {
-  width: 50px;
-  height: 50px;
-
-  border: none;
-  border-radius: 50%;
-
-  cursor: pointer;
-
-  font-size: 18px;
-
-  transition: all .3s ease;
-}
-
-.navbar.dark .theme-btn {
-  background: white;
-  color: black;
-}
-
-.navbar.light .theme-btn {
-  background: #111827;
-  color: white;
-}
-
-.theme-btn:hover {
-  transform: rotate(180deg);
-
-  box-shadow:
-    0 0 15px #2563eb,
-    0 0 30px #2563eb;
-}
-
-/* RESUME BUTTON */
-
-.nav-resume-btn {
-  text-decoration: none;
-
-  background: #2563eb;
-  color: white;
-
-  padding: 14px 24px;
-
-  border-radius: 12px;
-
-  font-weight: 600;
-
-  transition: all .3s ease;
-}
-
-.nav-resume-btn:hover {
-  transform: translateY(-3px);
-
-  box-shadow:
-    0 0 15px #2563eb,
-    0 0 30px #2563eb;
-}
-
-/* HAMBURGER */
-
-.menu-icon {
-  display: none;
-  font-size: 26px;
-  cursor: pointer;
-}
-
 /* MOBILE */
 
 @media (max-width: 992px) {
+  .navbar {
+    padding: 15px 6%;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+  }
 
   .menu-icon {
     display: block;
+    font-size: 24px;
+  }
+
+  .nav-resume-btn {
+    display: none;
+  }
+
+  .theme-btn {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .nav-links {
     position: absolute;
-
-    top: 90px;
+    top: 85px;
     left: -100%;
 
     width: 100%;
@@ -200,7 +47,9 @@
 
     padding: 30px 0;
 
-    transition: .4s ease;
+    gap: 25px;
+
+    transition: 0.4s ease;
   }
 
   .navbar.dark .nav-links {
@@ -213,9 +62,5 @@
 
   .nav-links.active {
     left: 0;
-  }
-
-  .nav-right {
-    display: none;
   }
 }
