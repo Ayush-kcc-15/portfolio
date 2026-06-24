@@ -1,4 +1,4 @@
-import "./patents.css";
+import "./Patents.css";
 import { FaShieldAlt, FaTram } from "react-icons/fa";
 
 function Patent() {
