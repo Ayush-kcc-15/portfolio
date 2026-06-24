@@ -19,8 +19,8 @@ function Achievements() {
 
     {
       icon: <FaAward />,
-      title: "IBM Skill Badges",
-      desc: "20+ IBM & Credly Badges Earned",
+      title: "Skill Badges",
+      desc: "20+ IBM & Microsoft Badges Earned",
     },
 
     {
