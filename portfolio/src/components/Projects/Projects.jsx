@@ -1,4 +1,4 @@
-import "./Projects.css";
+import "./projects.css";
 import agree2metImg from "../../assets/agree2met.png";
 import amazonCloneImg from "../../assets/amazon-clone.jpeg";
 import chatbotImg from "../../assets/ai-chatbot.png";

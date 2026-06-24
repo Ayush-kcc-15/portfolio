@@ -1,4 +1,4 @@
-import "./TechStack.css";
+import "./Techstack.css";
 
 import {
   FaJava,
