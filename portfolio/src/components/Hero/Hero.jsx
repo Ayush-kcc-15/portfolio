@@ -65,7 +65,7 @@ function Hero() {
 
         <div className="hero-buttons">
           <a
-            href="/resume.pdf"
+            href="/Ayush_Kumar_Resume.pdf"
             download
             className="resume-btn"
           >
