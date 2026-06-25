@@ -1,0 +1,93 @@
+/* ==========================================
+   PREMIUM PORTFOLIO DESIGN SYSTEM
+========================================== */
+
+/* LIGHT THEME */
+
+:root{
+
+  /* Background */
+
+  --bg-primary:#F7F3EC;
+  --bg-secondary:#EFE7DB;
+  --bg-tertiary:#E4D7C7;
+
+  /* Cards */
+
+  --card:#FFFCF8;
+  --card-hover:#FFFFFF;
+
+  /* Text */
+
+  --heading:#2C2C2C;
+  --text:#5C5C5C;
+  --muted:#8B8B8B;
+
+  /* Accent */
+
+  --primary:#C67C5A;
+  --primary-hover:#B56646;
+
+  /* UI */
+
+  --border:#DDD3C5;
+  --divider:#E8DED2;
+
+  /* Shadows */
+
+  --shadow:
+  0 8px 30px rgba(44,44,44,.08);
+
+  --shadow-hover:
+  0 20px 50px rgba(44,44,44,.15);
+
+  /* Radius */
+
+  --radius:22px;
+
+  /* Hero */
+
+  --hero-bg:
+  linear-gradient(
+  135deg,
+  #F7F3EC 0%,
+  #EFE7DB 55%,
+  #E4D7C7 100%);
+}
+
+/* ==========================================
+   DARK THEME
+========================================== */
+
+body.dark{
+
+  --bg-primary:#1A1816;
+  --bg-secondary:#23211F;
+  --bg-tertiary:#2D2925;
+
+  --card:#2C2926;
+  --card-hover:#34302C;
+
+  --heading:#F5EFE6;
+  --text:#D5CCC0;
+  --muted:#A79F96;
+
+  --primary:#D8B892;
+  --primary-hover:#E8C9A8;
+
+  --border:#3A3530;
+  --divider:#403A35;
+
+  --shadow:
+  0 10px 35px rgba(0,0,0,.45);
+
+  --shadow-hover:
+  0 25px 60px rgba(0,0,0,.6);
+
+  --hero-bg:
+  linear-gradient(
+  135deg,
+  #1A1816 0%,
+  #23211F 50%,
+  #2D2925 100%);
+}

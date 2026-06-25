@@ -23,9 +23,12 @@ function Navbar() {
       }`}
     >
       {/* LOGO */}
-      <div className="logo">
-        Ayush Kumar
-      </div>
+      <div
+  className="logo"
+  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+>
+  Ayush Kumar
+</div>
 
       {/* NAV LINKS */}
       <ul

@@ -1,219 +1,591 @@
-.tech-stack {
-  padding: 120px 8%;
-  position: relative;
-  overflow: hidden;
+/* ==========================================================
+                    TECH STACK SECTION
+========================================================== */
+
+.techstack-section{
+    padding:120px 8%;
+    position:relative;
+    overflow:hidden;
 }
+
+/* ==========================================================
+                    HEADER
+========================================================== */
+
+.techstack-header{
+
+    max-width:760px;
+
+    margin:0 auto 80px;
+
+    text-align:center;
+
+}
+
+.techstack-header span{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    background:rgba(198,124,90,.12);
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+    margin-bottom:20px;
+
+}
+
+.techstack-header h2{
+
+    font-size:3rem;
+
+    color:var(--heading);
+
+    margin-bottom:20px;
+
+    line-height:1.2;
+
+}
+
+.techstack-header p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    color:var(--text);
+
+    line-height:1.8;
+
+    font-size:1.05rem;
+
+}
+
+/* ==========================================================
+                    GRID
+========================================================== */
+
+.techstack-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:35px;
+
+}
+
+/* ==========================================================
+                    CARD
+========================================================== */
+
+.tech-card{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:28px;
+
+    padding:35px;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s ease;
+
+}
+
+.tech-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--primary);
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+/* ==========================================================
+                    CARD HEADER
+========================================================== */
+
+.tech-card-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-bottom:30px;
+
+}
+
+.tech-main-icon{
+
+    width:60px;
+
+    height:60px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:18px;
+
+    background:#FFF3E9;
+
+    color:var(--primary);
+
+    font-size:26px;
+
+    transition:.35s;
+
+}
+
+.tech-card:hover .tech-main-icon{
+
+    background:var(--primary);
+
+    color:#fff;
+
+    transform:rotate(-10deg);
+
+}
+
+.tech-card-header h3{
+
+    font-size:1.45rem;
+
+    color:var(--heading);
+
+}
+
+/* ==========================================================
+                    TECH LIST
+========================================================== */
+
+.tech-list{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:16px;
+
+}
+
+/* ==========================================================
+                    TECH ITEM
+========================================================== */
+
+.tech-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:14px 16px;
+
+    border-radius:16px;
+
+    background:rgba(198,124,90,.05);
+
+    transition:.3s ease;
+
+}
+
+.tech-item:hover{
+
+    transform:translateX(8px);
+
+    background:rgba(198,124,90,.12);
+
+}
+
+.tech-icon{
+
+    width:42px;
+
+    height:42px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:12px;
+
+    background:#fff;
+
+    color:var(--primary);
+
+    font-size:20px;
+
+    transition:.3s;
+
+}
+
+.tech-item:hover .tech-icon{
+
+    transform:rotate(-12deg) scale(1.08);
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+.tech-item span{
+
+    font-weight:600;
+
+    color:var(--heading);
+
+}
+
+/* ==========================================================
+                    LIGHT MODE
+========================================================== */
+
+body:not(.dark) .tech-card{
+
+    background:#FFFFFF;
+
+}
+
+body:not(.dark) .tech-icon{
+
+    background:#ffffff;
+
+}
+
+/* ==========================================================
+                    DARK MODE
+========================================================== */
+
+body.dark .tech-card{
+
+    background:#2C2926;
+
+}
+
+body.dark .tech-main-icon{
+
+    background:#3B322C;
+
+}
+
+body.dark .tech-item{
+
+    background:#34302C;
+
+}
+
+body.dark .tech-icon{
+
+    background:#3B322C;
+
+}
+
+/* ==========================================================
+                    RESPONSIVE
+========================================================== */
+
+@media(max-width:992px){
+
+.techstack-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.techstack-section{
+
+padding:90px 6%;
+
+}
+
+.techstack-header h2{
+
+font-size:2.3rem;
+
+}
+
+.tech-card{
+
+padding:28px;
+
+}
+
+.tech-list{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.techstack-header h2{
+
+font-size:2rem;
+
+}
+
+.tech-card{
+
+padding:22px;
+
+}
+
+.tech-main-icon{
+
+width:50px;
+
+height:50px;
+
+font-size:22px;
+
+}
+
+.tech-icon{
+
+width:36px;
+
+height:36px;
+
+font-size:18px;
+
+}
+
+}
+/* ==========================================================
+                PREMIUM EFFECTS (PART 3)
+========================================================== */
 
 /* Background Glow */
 
-.tech-stack::before {
-  content: "";
+.techstack-section::before{
 
-  position: absolute;
+    content:"";
 
-  width: 700px;
-  height: 700px;
+    position:absolute;
 
-  top: 50%;
-  left: 50%;
+    width:700px;
+    height:700px;
 
-  transform: translate(-50%, -50%);
+    top:45%;
+    left:50%;
 
-  background: radial-gradient(
-    circle,
-    rgba(37, 99, 235, 0.12),
-    transparent 70%
-  );
+    transform:translate(-50%,-50%);
 
-  filter: blur(120px);
+    background:radial-gradient(
+        circle,
+        rgba(198,124,90,.10),
+        transparent 70%
+    );
 
-  z-index: -1;
+    filter:blur(100px);
+
+    z-index:-1;
+
 }
 
-/* Header */
+/* --------------------------------
+        Card Shine
+-------------------------------- */
 
-.tech-header {
-  text-align: center;
-  margin-bottom: 80px;
+.tech-card{
+
+    position:relative;
+
+    overflow:hidden;
+
 }
 
-.tech-header span {
-  color: #2563eb;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 2px;
+.tech-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-120%;
+    left:-40%;
+
+    width:120px;
+    height:220%;
+
+    transform:rotate(25deg);
+
+    background:rgba(255,255,255,.15);
+
+    transition:.8s;
+
 }
 
-.tech-header h2 {
-  margin-top: 12px;
+.tech-card:hover::before{
 
-  font-size: 3.2rem;
-  font-weight: 800;
+    left:130%;
 
-  color: var(--heading-color);
 }
 
-/* Grid */
+/* --------------------------------
+        Floating Animation
+-------------------------------- */
 
-.tech-grid {
-  display: grid;
+.tech-card:nth-child(1){
 
-  grid-template-columns:
-    repeat(auto-fit, minmax(220px, 1fr));
+    animation:techFloat1 7s ease-in-out infinite;
 
-  gap: 30px;
-
-  max-width: 1400px;
-  margin: 0 auto;
 }
 
-/* Cards */
+.tech-card:nth-child(2){
 
-.tech-card {
-  background: var(--card-bg);
+    animation:techFloat2 8s ease-in-out infinite;
 
-  border: 1px solid var(--card-border);
-
-  border-radius: 24px;
-
-  height: 180px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  cursor: pointer;
-
-  transition: all 0.35s ease;
-
-  position: relative;
-
-  overflow: hidden;
 }
 
-/* Glow Layer */
+.tech-card:nth-child(3){
 
-.tech-card::before {
-  content: "";
+    animation:techFloat2 7.5s ease-in-out infinite;
 
-  position: absolute;
-
-  width: 180px;
-  height: 180px;
-
-  top: -60px;
-  right: -60px;
-
-  background: radial-gradient(
-    circle,
-    rgba(37,99,235,.18),
-    transparent
-  );
-
-  transition: .4s;
 }
 
-.tech-card:hover::before {
-  transform: scale(1.5);
+.tech-card:nth-child(4){
+
+    animation:techFloat1 8.5s ease-in-out infinite;
+
 }
 
-/* Hover */
+@keyframes techFloat1{
 
-.tech-card:hover {
-  transform: translateY(-10px);
+    0%,100%{
 
-  border-color: #2563eb;
+        transform:translateY(0);
 
-  box-shadow:
-    0 0 25px rgba(37,99,235,.35),
-    0 0 60px rgba(37,99,235,.15);
+    }
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
 }
 
-/* Icon */
+@keyframes techFloat2{
 
-.tech-icon {
-  font-size: 4rem;
+    0%,100%{
 
-  color: #2563eb;
+        transform:translateY(0);
 
-  margin-bottom: 20px;
+    }
 
-  transition: all .3s ease;
+    50%{
 
-  z-index: 2;
+        transform:translateY(6px);
+
+    }
+
 }
 
-.tech-card:hover .tech-icon {
-  transform: scale(1.2);
+/* --------------------------------
+        Hover Lift
+-------------------------------- */
 
-  filter:
-    drop-shadow(0 0 10px #2563eb)
-    drop-shadow(0 0 20px #2563eb);
+.tech-card:hover{
+
+    transform:translateY(-12px);
+
 }
 
-/* Text */
+/* --------------------------------
+        Icon Hover
+-------------------------------- */
 
-.tech-card h3 {
-  font-size: 1.3rem;
-  font-weight: 600;
+.tech-item:hover .tech-icon{
 
-  color: var(--heading-color);
+    transform:rotate(-12deg) scale(1.12);
 
-  z-index: 2;
 }
 
-/* ---------- DARK MODE ---------- */
+/* --------------------------------
+        Text Hover
+-------------------------------- */
 
-body.dark {
-  --heading-color: #ffffff;
+.tech-item span{
 
-  --card-bg: rgba(255,255,255,0.05);
+    transition:.3s;
 
-  --card-border: rgba(255,255,255,0.08);
 }
 
-/* ---------- LIGHT MODE ---------- */
+.tech-item:hover span{
 
-body:not(.dark) {
-  --heading-color: #111827;
+    color:var(--primary);
 
-  --card-bg: #ffffff;
-
-  --card-border: #e5e7eb;
 }
 
-body:not(.dark) .tech-card {
-  box-shadow:
-    0 10px 25px rgba(0,0,0,.05);
+/* --------------------------------
+        Card Glow
+-------------------------------- */
+
+.tech-card:hover{
+
+    box-shadow:
+        0 20px 45px rgba(198,124,90,.18);
+
 }
 
-body:not(.dark) .tech-card:hover {
-  box-shadow:
-    0 15px 35px rgba(37,99,235,.18);
+/* --------------------------------
+        Main Icon Glow
+-------------------------------- */
+
+.tech-main-icon{
+
+    box-shadow:
+        0 10px 25px rgba(198,124,90,.15);
+
 }
 
-/* Mobile */
+/* --------------------------------
+        Smooth Transitions
+-------------------------------- */
 
-@media (max-width: 992px) {
+.techstack-section *{
 
-  .tech-stack {
-    padding: 90px 6%;
-  }
+    transition:
+        background .3s ease,
+        color .3s ease,
+        border-color .3s ease,
+        transform .3s ease,
+        box-shadow .3s ease;
 
-  .tech-header h2 {
-    font-size: 2.2rem;
-  }
+}
 
-  .tech-grid {
-    grid-template-columns: 1fr;
-  }
+/* --------------------------------
+        Dark Theme
+-------------------------------- */
 
-  .tech-card {
-    height: 160px;
-  }
+body.dark .tech-card::before{
 
-  .tech-icon {
-    font-size: 3rem;
-  }
+    background:rgba(255,255,255,.05);
+
 }

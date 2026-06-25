@@ -1,106 +1,851 @@
-.skills {
-  padding: 120px 8%;
+/* ==========================================================
+                    SKILLS SECTION
+========================================================== */
+
+.skills-section{
+    padding:120px 8%;
+    position:relative;
+    overflow:hidden;
 }
 
-/* HEADER */
+/* ==========================================================
+                    HEADER
+========================================================== */
 
-.skills-header {
-  text-align: center;
-  margin-bottom: 70px;
+.skills-header{
+
+    max-width:760px;
+
+    margin:0 auto 80px;
+
+    text-align:center;
+
 }
 
-.skills-header span {
-  color: #2563eb;
-  font-weight: 600;
-  letter-spacing: 2px;
+.skills-header span{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    background:rgba(198,124,90,.12);
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+    margin-bottom:20px;
+
 }
 
-.skills-header h2 {
-  margin-top: 10px;
-  font-size: 3rem;
-  color: var(--heading-color);
+.skills-header h2{
+
+    font-size:3rem;
+
+    color:var(--heading);
+
+    margin-bottom:20px;
+
+    line-height:1.2;
+
 }
 
-/* GRID */
+.skills-header p{
 
-.skills-grid {
-  display: grid;
+    max-width:650px;
 
-  grid-template-columns:
-    repeat(auto-fit, minmax(220px, 1fr));
+    margin:auto;
 
-  gap: 25px;
+    color:var(--text);
+
+    line-height:1.8;
+
+    font-size:1.05rem;
+
 }
 
-/* CARD */
+/* ==========================================================
+                    GRID
+========================================================== */
 
-.skill-card {
-  padding: 35px;
+.skills-grid{
 
-  border-radius: 20px;
+    display:grid;
 
-  text-align: center;
+    grid-template-columns:repeat(2,1fr);
 
-  background: var(--card-bg);
+    gap:35px;
 
-  border: 1px solid var(--card-border);
-
-  transition: 0.35s ease;
-
-  cursor: pointer;
 }
 
-.skill-card:hover {
-  transform: translateY(-10px);
+/* ==========================================================
+                    CATEGORY CARD
+========================================================== */
 
-  border-color: #2563eb;
+.skill-category{
 
-  box-shadow:
-    0 0 20px rgba(37,99,235,.3),
-    0 0 40px rgba(37,99,235,.15);
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:28px;
+
+    padding:35px;
+
+    transition:.35s;
+
+    box-shadow:var(--shadow);
+
 }
 
-.skill-icon {
-  font-size: 3rem;
-  color: #2563eb;
+.skill-category:hover{
 
-  margin-bottom: 15px;
+    transform:translateY(-10px);
+
+    border-color:var(--primary);
+
+    box-shadow:var(--shadow-hover);
+
 }
 
-.skill-card h3 {
-  color: var(--heading-color);
-  font-size: 1.2rem;
+.skill-category h3{
+
+    color:var(--heading);
+
+    font-size:1.5rem;
+
+    margin-bottom:35px;
+
 }
 
-/* DARK MODE */
+/* ==========================================================
+                    SKILL ITEM
+========================================================== */
 
-body.dark {
-  --heading-color: #ffffff;
-  --card-bg: rgba(255,255,255,0.05);
-  --card-border: rgba(255,255,255,0.08);
+.skill-item{
+
+    margin-bottom:30px;
+
 }
 
-/* LIGHT MODE */
+.skill-item:last-child{
 
-body:not(.dark) {
-  --heading-color: #0f172a;
-  --card-bg: #ffffff;
-  --card-border: #e2e8f0;
+    margin-bottom:0;
+
 }
 
-/* MOBILE */
+.skill-top{
 
-@media (max-width: 768px) {
+    display:flex;
 
-  .skills-header h2 {
-    font-size: 2rem;
-  }
+    justify-content:space-between;
 
-  .skill-card {
-    padding: 25px;
-  }
+    align-items:center;
 
-  .skill-icon {
-    font-size: 2.5rem;
-  }
+    margin-bottom:12px;
+
+}
+
+.skill-name{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    color:var(--heading);
+
+    font-weight:600;
+
+}
+
+.skill-icon{
+
+    width:42px;
+
+    height:42px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:12px;
+
+    background:#FFF3E9;
+
+    color:var(--primary);
+
+    font-size:20px;
+
+    transition:.3s;
+
+}
+
+.skill-category:hover .skill-icon{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+.skill-percent{
+
+    color:var(--primary);
+
+    font-weight:700;
+
+}
+
+/* ==========================================================
+                    PROGRESS BAR
+========================================================== */
+
+.progress-bar{
+
+    width:100%;
+
+    height:10px;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    background:#ECE4D8;
+
+}
+
+.progress-fill{
+
+    height:100%;
+
+    border-radius:30px;
+
+    background:linear-gradient(
+        90deg,
+        var(--primary),
+        #E7C4A7
+    );
+
+    box-shadow:
+        0 0 12px rgba(198,124,90,.25);
+
+}
+
+/* ==========================================================
+                    DARK MODE
+========================================================== */
+
+body.dark .skill-category{
+
+    background:#2C2926;
+
+}
+
+body.dark .skill-icon{
+
+    background:#3B322C;
+
+}
+
+body.dark .progress-bar{
+
+    background:#3A3530;
+
+}
+
+/* ==========================================================
+                    LIGHT MODE
+========================================================== */
+
+body:not(.dark) .skill-category{
+
+    background:#FFFFFF;
+
+}
+
+/* ==========================================================
+                    RESPONSIVE
+========================================================== */
+
+@media(max-width:992px){
+
+.skills-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.skills-section{
+
+padding:90px 6%;
+
+}
+
+.skills-header h2{
+
+font-size:2.3rem;
+
+}
+
+.skill-category{
+
+padding:28px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.skills-header h2{
+
+font-size:2rem;
+
+}
+
+.skill-top{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:8px;
+
+}
+
+.skill-icon{
+
+width:38px;
+height:38px;
+
+font-size:18px;
+
+}
+
+}
+/* ==========================================================
+                    PREMIUM EFFECTS
+========================================================== */
+
+/* Background Glow */
+
+.skills-section::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:700px;
+    height:700px;
+
+    left:50%;
+    top:45%;
+
+    transform:translate(-50%,-50%);
+
+    background:radial-gradient(
+        circle,
+        rgba(198,124,90,.10),
+        transparent 70%
+    );
+
+    filter:blur(90px);
+
+    z-index:-1;
+
+}
+
+/* -----------------------------
+   Card Shine Effect
+----------------------------- */
+
+.skill-category{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.skill-category::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-120%;
+
+    left:-40%;
+
+    width:120px;
+
+    height:220%;
+
+    transform:rotate(25deg);
+
+    background:rgba(255,255,255,.18);
+
+    transition:.8s;
+
+}
+
+.skill-category:hover::before{
+
+    left:130%;
+
+}
+
+/* -----------------------------
+   Hover Animation
+----------------------------- */
+
+.skill-category:hover{
+
+    transform:translateY(-12px);
+
+}
+
+/* -----------------------------
+   Icon Animation
+----------------------------- */
+
+.skill-category:hover .skill-icon{
+
+    transform:rotate(-10deg) scale(1.1);
+
+}
+
+/* -----------------------------
+   Skill Text Animation
+----------------------------- */
+
+.skill-name span:last-child{
+
+    transition:.35s;
+
+}
+
+.skill-category:hover .skill-name span:last-child{
+
+    color:var(--primary);
+
+}
+
+/* -----------------------------
+   Percentage Animation
+----------------------------- */
+
+.skill-percent{
+
+    transition:.35s;
+
+}
+
+.skill-category:hover .skill-percent{
+
+    transform:scale(1.1);
+
+}
+
+/* -----------------------------
+   Progress Glow
+----------------------------- */
+
+.progress-fill{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.progress-fill::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    right:-30px;
+
+    width:40px;
+
+    height:100%;
+
+    background:rgba(255,255,255,.45);
+
+    filter:blur(5px);
+
+    animation:shine 2.5s infinite linear;
+
+}
+
+/* -----------------------------
+   Glow Animation
+----------------------------- */
+
+@keyframes shine{
+
+    0%{
+
+        right:-40px;
+
+    }
+
+    100%{
+
+        right:105%;
+
+    }
+
+}
+
+/* -----------------------------
+   Floating Animation
+----------------------------- */
+
+.skill-category:nth-child(1){
+
+    animation:float1 6s ease-in-out infinite;
+
+}
+
+.skill-category:nth-child(2){
+
+    animation:float2 7s ease-in-out infinite;
+
+}
+
+.skill-category:nth-child(3){
+
+    animation:float2 6.5s ease-in-out infinite;
+
+}
+
+.skill-category:nth-child(4){
+
+    animation:float1 7.5s ease-in-out infinite;
+
+}
+
+@keyframes float1{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+}
+
+@keyframes float2{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(6px);
+
+    }
+
+}
+
+/* -----------------------------
+   Better Progress Bar
+----------------------------- */
+
+.progress-bar{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.progress-bar::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:inherit;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.08),
+        transparent
+    );
+
+}
+
+/* -----------------------------
+   Dark Theme
+----------------------------- */
+
+body.dark .skill-category::before{
+
+    background:rgba(255,255,255,.05);
+
+}
+/* ==========================================================
+                    PART 4
+            FINAL RESPONSIVE & POLISH
+========================================================== */
+
+/* Smooth transitions */
+
+.skills-section *{
+    transition:
+        background .3s ease,
+        color .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease,
+        transform .3s ease;
+}
+
+/* Better spacing */
+
+.skill-item:not(:last-child){
+    padding-bottom:20px;
+    border-bottom:1px solid var(--border);
+}
+
+/* Better percentage */
+
+.skill-percent{
+    min-width:48px;
+    text-align:right;
+    font-size:.95rem;
+}
+
+/* Progress animation */
+
+.progress-fill{
+    transition:width 1.5s ease;
+}
+
+/* Header animation */
+
+.skills-header h2{
+
+    background:linear-gradient(
+        90deg,
+        var(--heading),
+        var(--primary)
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+}
+
+/* Card Border Glow */
+
+.skill-category:hover{
+
+    border-color:rgba(198,124,90,.45);
+
+}
+
+/* Icon Shadow */
+
+.skill-icon{
+
+    box-shadow:
+        0 8px 20px rgba(198,124,90,.12);
+
+}
+
+/* Better Progress */
+
+.progress-bar{
+
+    margin-top:2px;
+
+}
+
+/* Desktop */
+
+@media (max-width:1200px){
+
+.skills-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+gap:30px;
+
+}
+
+}
+
+/* Tablet */
+
+@media (max-width:992px){
+
+.skills-section{
+
+padding:100px 7%;
+
+}
+
+.skills-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.skill-category{
+
+padding:32px;
+
+}
+
+}
+
+/* Mobile */
+
+@media (max-width:768px){
+
+.skills-section{
+
+padding:80px 6%;
+
+}
+
+.skills-header{
+
+margin-bottom:55px;
+
+}
+
+.skills-header h2{
+
+font-size:2.2rem;
+
+}
+
+.skills-header p{
+
+font-size:1rem;
+
+}
+
+.skill-category{
+
+padding:26px;
+
+border-radius:22px;
+
+}
+
+.skill-name{
+
+font-size:.95rem;
+
+}
+
+.progress-bar{
+
+height:8px;
+
+}
+
+}
+
+/* Small Mobile */
+
+@media (max-width:480px){
+
+.skills-section{
+
+padding:70px 5%;
+
+}
+
+.skills-header h2{
+
+font-size:1.8rem;
+
+line-height:1.3;
+
+}
+
+.skill-category{
+
+padding:22px;
+
+}
+
+.skill-category h3{
+
+font-size:1.3rem;
+
+}
+
+.skill-top{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:10px;
+
+}
+
+.skill-percent{
+
+text-align:left;
+
+}
+
+.skill-icon{
+
+width:36px;
+height:36px;
+
+font-size:18px;
+
+}
+
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce){
+
+.skill-category,
+.skill-icon,
+.progress-fill{
+
+animation:none;
+transition:none;
+
+}
+
 }

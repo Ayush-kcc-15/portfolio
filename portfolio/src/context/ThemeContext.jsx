@@ -1,19 +1,30 @@
-import { createContext, useEffect, useState } from "react";
+import {
+  createContext,
+  useEffect,
+  useState,
+} from "react";
 
 export const ThemeContext = createContext();
 
 export default function ThemeProvider({ children }) {
   const [darkMode, setDarkMode] = useState(false);
 
+  // Load saved theme or use system preference
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
 
-    if (savedTheme === "dark") {
-      setDarkMode(true);
-      document.body.classList.add("dark");
+    if (savedTheme) {
+      setDarkMode(savedTheme === "dark");
+    } else {
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+
+      setDarkMode(prefersDark);
     }
   }, []);
 
+  // Apply theme to body
   useEffect(() => {
     if (darkMode) {
       document.body.classList.add("dark");
@@ -25,7 +36,12 @@ export default function ThemeProvider({ children }) {
   }, [darkMode]);
 
   return (
-    <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
+    <ThemeContext.Provider
+      value={{
+        darkMode,
+        setDarkMode,
+      }}
+    >
       {children}
     </ThemeContext.Provider>
   );

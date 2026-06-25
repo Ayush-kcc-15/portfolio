@@ -1,162 +1,210 @@
 import "./Hero.css";
-import profile from "../../assets/hero.png";
+
+import { motion } from "framer-motion";
 
 import { TypeAnimation } from "react-type-animation";
-import { motion } from "framer-motion";
-import { useContext } from "react";
 
-import { ThemeContext } from "../../context/ThemeContext";
-
-import {
-  FaGithub,
-  FaLinkedin,
-  FaEnvelope,
-  FaReact,
-  FaNodeJs,
-  FaJava,
-  FaPython,
-} from "react-icons/fa";
-
+import CodeWindow from "./CodeWindow";
+import HeroStats from "./HeroStats";
+import FloatingIcons from "./FloatingIcons";
 import { SiCredly } from "react-icons/si";
 
+import {
+  FaLinkedinIn,
+  FaGithub,
+  FaEnvelope,
+} from "react-icons/fa";
+
 function Hero() {
-  const { darkMode } = useContext(ThemeContext);
-
   return (
-    <section className={`hero ${darkMode ? "dark" : "light"}`}>
-      
-      {/* LEFT SIDE */}
-      <motion.div
-        className="hero-left"
-        initial={{ opacity: 0, x: -80 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <h4>Hello, I'm 👋</h4>
+    <section className="hero">
 
-        <h1>
-          Ayush <span>Kumar</span>
-        </h1>
+      {/* Decorative Background */}
 
-        <h2>B.Tech CSE Student</h2>
+      <div className="hero-bg-text">
 
-        <div className="roles">
-          <TypeAnimation
-            sequence={[
-              "Full Stack Developer",
-              2000,
-              "Cloud Enthusiast",
-              2000,
-              "Cyber Security Learner",
-              2000,
-              "AI Explorer",
-              2000,
-            ]}
-            wrapper="span"
-            repeat={Infinity}
-          />
-        </div>
+  <span>AYUSH</span>
 
-        <p>
-          Passionate about building smart solutions with code.
-          I love Web Development, Cloud Computing, AI,
-          Cyber Security and solving real-world problems.
-        </p>
+  <span>KUMAR</span>
 
-        <div className="hero-buttons">
-          <a
-            href="/Ayush_Kumar_Resume.pdf"
-            download
-            className="resume-btn"
-          >
-            Download Resume
-          </a>
+</div>
 
-          <a
-            href="#contact"
-            className="contact-btn"
-          >
-            Contact Me
-          </a>
+      <div className="hero-blob hero-blob-one"></div>
+      <div className="hero-blob hero-blob-two"></div>
 
-          <a
-            href="https://www.credly.com/users/ayush-kumar.bfdaf45e"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="credly-btn"
-          >
-            View Badges
-          </a>
-        </div>
+      <div className="hero-container">
 
-        <div className="socials">
-          <a
-            href="https://www.linkedin.com/in/ayush-kumar-659ab0329"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="LinkedIn"
-          >
-            <FaLinkedin />
-          </a>
+        {/* LEFT */}
 
-          <a
-            href="https://github.com/Ayush-kcc-15"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="GitHub"
-          >
-            <FaGithub />
-          </a>
+        <motion.div
+          className="hero-left"
+          initial={{ opacity:0, x:-50 }}
+          animate={{ opacity:1, x:0 }}
+          transition={{ duration:0.8 }}
+        >
 
-          <a
-            href="https://www.credly.com/users/ayush-kumar.bfdaf45e"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Credly"
-          >
-            <SiCredly />
-          </a>
+          <div className="availability">
 
-          <a
-            href="mailto:ayush.kccitm@gmail.com"
-            title="Email"
-          >
-            <FaEnvelope />
-          </a>
-        </div>
-      </motion.div>
+            <span className="dot"></span>
 
-      {/* RIGHT SIDE */}
-      <motion.div
-        className="hero-right"
-        initial={{ opacity: 0, x: 80 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <div className="hero-glow"></div>
+            Available for Internship
 
-        <div className="floating-icon react">
-          <FaReact />
-        </div>
+          </div>
 
-        <div className="floating-icon node">
-          <FaNodeJs />
-        </div>
+          <h4>
 
-        <div className="floating-icon java">
-          <FaJava />
-        </div>
+            Hi, I'm
 
-        <div className="floating-icon python">
-          <FaPython />
-        </div>
+          </h4>
 
-        <img
-          src={profile}
-          alt="Ayush Kumar"
-          className="hero-image"
-        />
-      </motion.div>
+          <h1>
+
+            Ayush
+
+            <span>
+
+              Kumar.
+
+            </span>
+
+          </h1>
+
+          <div className="hero-role">
+
+            <TypeAnimation
+
+              sequence={[
+
+                "Full Stack Developer",
+                2000,
+
+                "Cloud Enthusiast",
+                2000,
+
+                "AI Explorer",
+                2000,
+
+                "Cyber Security Learner",
+                2000,
+
+              ]}
+
+              speed={40}
+
+              repeat={Infinity}
+
+            />
+
+          </div>
+
+          <p>
+
+            Passionate about building clean,
+            scalable and intelligent digital
+            experiences that solve real-world
+            problems.
+
+          </p>
+
+          <div className="hero-buttons">
+
+            <a
+              href="/Ayush_Kumar_Resume.pdf"
+              download
+              className="primary-btn"
+            >
+
+              Download Resume
+
+            </a>
+
+            <a
+              href="#contact"
+              className="secondary-btn"
+            >
+
+              Contact Me
+
+            </a>
+
+          </div>
+
+          <div className="hero-socials">
+
+            <a
+              href="https://www.linkedin.com/in/ayush-kumar-659ab0329"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaLinkedinIn />
+            </a>
+
+            <a
+              href="https://github.com/Ayush-kcc-15"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaGithub />
+            </a>
+
+        
+            <a
+              href="mailto:ayush.kccitm@gmail.com"
+            >
+              <FaEnvelope />
+            </a>
+
+          </div>
+
+                 <a
+  href="https://www.credly.com/users/ayush-kumar.bfdaf45e"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="credly-card"
+>
+  <div className="credly-left">
+    <div className="credly-badge">
+      🏅
+    </div>
+
+    <div>
+      <h4>Verified Certifications</h4>
+
+      <span>View my Credly badges</span>
+    </div>
+  </div>
+
+  <div className="credly-arrow">
+    →
+  </div>
+</a>
+
+        </motion.div>
+
+        {/* RIGHT */}
+
+        <motion.div
+
+          className="hero-right"
+
+          initial={{ opacity:0, x:50 }}
+
+          animate={{ opacity:1, x:0 }}
+
+          transition={{ duration:0.8 }}
+
+        >
+
+          <FloatingIcons />
+
+          <CodeWindow />
+
+          <HeroStats />
+
+        </motion.div>
+
+      </div>
+
     </section>
   );
 }

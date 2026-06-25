@@ -1,193 +1,550 @@
-.about {
-  padding: 120px 8%;
-  transition: 0.3s ease;
+/* ==========================================================
+                    ABOUT SECTION
+========================================================== */
+
+.about-section{
+    padding:120px 8%;
+    position:relative;
+    overflow:hidden;
 }
 
-/* HEADER */
+/* ==========================================================
+                    HEADER
+========================================================== */
 
-.about-header {
-  text-align: center;
-  margin-bottom: 70px;
+.about-header{
+
+    max-width:760px;
+
+    margin:0 auto 80px;
+
+    text-align:center;
+
 }
 
-.about-header span {
-  color: #2563eb;
-  font-weight: 600;
-  letter-spacing: 2px;
+.about-header span{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    background:rgba(198,124,90,.12);
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+    margin-bottom:22px;
+
 }
 
-.about-header h2 {
-  margin-top: 10px;
-  font-size: 3rem;
-  color: var(--heading-color);
+.about-header h2{
+
+    font-size:3.2rem;
+
+    line-height:1.15;
+
+    color:var(--heading);
+
+    margin-bottom:25px;
+
 }
 
-/* CONTAINER */
+.about-header p{
 
-.about-container {
-  display: flex;
-  align-items: center;
-  gap: 80px;
+    max-width:700px;
+
+    margin:auto;
+
+    color:var(--text);
+
+    line-height:1.9;
+
+    font-size:1.08rem;
+
 }
 
-/* IMAGE */
+/* ==========================================================
+                    LAYOUT
+========================================================== */
 
-.about-image {
-  flex: 1;
-  position: relative;
-  display: flex;
-  justify-content: center;
+.about-container{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:60px;
+
+    align-items:start;
+
 }
 
-.image-glow {
-  position: absolute;
-  width: 350px;
-  height: 350px;
-  border-radius: 50%;
+/* ==========================================================
+                    LEFT SIDE
+========================================================== */
 
-  background: radial-gradient(
-    circle,
-    rgba(37, 99, 235, 0.5),
-    transparent
-  );
+.about-left{
 
-  filter: blur(70px);
+    display:flex;
+
+    flex-direction:column;
+
+    gap:28px;
+
 }
 
-.about-image img {
-  width: 350px;
-  position: relative;
-  z-index: 2;
+/* ==========================================================
+                    FEATURE CARD
+========================================================== */
+
+.about-card{
+
+    display:flex;
+
+    gap:24px;
+
+    padding:32px;
+
+    border-radius:26px;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+}
+
+.about-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--primary);
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+/* ICON */
+
+.about-icon{
+
+    width:72px;
+
+    height:72px;
+
+    min-width:72px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:20px;
+
+    background:#FFF3E9;
+
+    color:var(--primary);
+
+    font-size:30px;
+
+    transition:.35s;
+
+}
+
+.about-card:hover .about-icon{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+/* TEXT */
+
+.about-card h3{
+
+    color:var(--heading);
+
+    font-size:1.35rem;
+
+    margin-bottom:10px;
+
+}
+
+.about-card p{
+
+    color:var(--text);
+
+    line-height:1.8;
+
+}
+/* ==========================================================
+                    RIGHT SIDE
+========================================================== */
+
+.about-right{
+
+    position:relative;
+
+}
+
+/* ==========================================================
+                    JOURNEY CARD
+========================================================== */
+
+.journey-card{
+
+    padding:40px;
+
+    border-radius:30px;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+}
+
+.journey-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+.journey-card h3{
+
+    font-size:2rem;
+
+    color:var(--heading);
+
+    margin-bottom:40px;
+
+}
+
+/* ==========================================================
+                    TIMELINE
+========================================================== */
+
+.timeline{
+
+    position:relative;
+
+    margin-left:10px;
+
+}
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:30px;
+
+    top:0;
+
+    width:2px;
+
+    height:100%;
+
+    background:linear-gradient(
+        to bottom,
+        var(--primary),
+        rgba(198,124,90,.15)
+    );
+
+}
+
+/* ITEM */
+
+.timeline-item{
+
+    position:relative;
+
+    display:flex;
+
+    gap:28px;
+
+    margin-bottom:40px;
+
+}
+
+.timeline-item:last-child{
+
+    margin-bottom:10px;
+
+}
+
+/* YEAR */
+
+.timeline-item span{
+
+    width:64px;
+
+    height:64px;
+
+    min-width:64px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-weight:700;
+
+    position:relative;
+
+    z-index:2;
+
+    box-shadow:
+    0 10px 25px rgba(198,124,90,.30);
+
 }
 
 /* CONTENT */
 
-.about-content {
-  flex: 1.3;
+.timeline-item h4{
+
+    color:var(--heading);
+
+    margin-bottom:8px;
+
+    font-size:1.2rem;
+
 }
 
-.about-content p {
-  color: var(--text-color);
-  line-height: 1.9;
-  margin-bottom: 20px;
-  font-size: 1.05rem;
+.timeline-item p{
+
+    color:var(--text);
+
+    line-height:1.8;
+
 }
 
-/* TAGS */
+/* ==========================================================
+                    BUTTON
+========================================================== */
 
-.about-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin: 30px 0;
+.about-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-top:20px;
+
+    padding:16px 28px;
+
+    border-radius:16px;
+
+    text-decoration:none;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-weight:600;
+
+    transition:.35s;
+
 }
 
-.about-tags span {
-  padding: 10px 18px;
-  border-radius: 30px;
+.about-btn svg{
 
-  color: #2563eb;
+    transition:.35s;
 
-  background: rgba(37, 99, 235, 0.1);
-
-  border: 1px solid rgba(37, 99, 235, 0.25);
-
-  font-size: 0.95rem;
-  font-weight: 500;
 }
 
-/* CARDS */
+.about-btn:hover{
 
-.about-cards {
-  display: flex;
-  gap: 20px;
-  margin-top: 35px;
+    transform:translateY(-5px);
+
+    background:var(--primary-hover);
+
+    box-shadow:
+    0 18px 40px rgba(198,124,90,.30);
+
 }
 
-.about-card {
-  flex: 1;
+.about-btn:hover svg{
 
-  padding: 25px;
+    transform:translateX(6px);
 
-  border-radius: 20px;
-
-  text-align: center;
-
-  transition: 0.3s ease;
-
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
 }
 
-.about-card:hover {
-  transform: translateY(-8px);
+/* ==========================================================
+                LIGHT MODE
+========================================================== */
 
-  border-color: #2563eb;
+body:not(.dark) .about-card,
+body:not(.dark) .journey-card{
 
-  box-shadow:
-    0 0 15px rgba(37,99,235,.25),
-    0 0 35px rgba(37,99,235,.15);
+    background:#FFFFFF;
+
 }
 
-.about-card h3 {
-  color: #2563eb;
-  font-size: 2rem;
+/* ==========================================================
+                DARK MODE
+========================================================== */
+
+body.dark .about-card,
+body.dark .journey-card{
+
+    background:#2C2926;
+
 }
 
-.about-card p {
-  margin-top: 8px;
-  color: var(--text-color);
+body.dark .about-icon{
+
+    background:#3B322C;
+
 }
 
-/* DARK MODE */
+/* ==========================================================
+                RESPONSIVE
+========================================================== */
 
-body.dark {
-  --heading-color: #ffffff;
-  --text-color: #d1d5db;
+@media(max-width:1100px){
 
-  --card-bg: rgba(255,255,255,0.05);
-  --card-border: rgba(255,255,255,0.08);
+.about-container{
+
+grid-template-columns:1fr;
+
+gap:50px;
+
 }
 
-/* LIGHT MODE */
-
-body:not(.dark) {
-  --heading-color: #0f172a;
-  --text-color: #475569;
-
-  --card-bg: #ffffff;
-  --card-border: #e2e8f0;
 }
 
-/* MOBILE */
+@media(max-width:768px){
 
-@media (max-width: 992px) {
+.about-section{
 
-  .about-container {
-    flex-direction: column;
-    text-align: center;
-  }
+padding:90px 6%;
 
-  .about-header h2 {
-    font-size: 2rem;
-  }
-
-  .about-image img {
-    width: 280px;
-  }
-
-  .about-cards {
-    flex-direction: column;
-  }
-
-  .about-tags {
-    justify-content: center;
-  }
 }
-body:not(.dark) .image-glow {
-  background: radial-gradient(
-    circle,
-    rgba(59,130,246,.35),
-    transparent
-  );
+
+.about-header h2{
+
+font-size:2.4rem;
+
+}
+
+.about-card{
+
+flex-direction:column;
+
+text-align:center;
+
+align-items:center;
+
+}
+
+.about-icon{
+
+margin-bottom:10px;
+
+}
+
+.timeline::before{
+
+left:24px;
+
+}
+
+.timeline-item{
+
+gap:18px;
+
+}
+
+.timeline-item span{
+
+width:50px;
+
+height:50px;
+
+min-width:50px;
+
+font-size:.9rem;
+
+}
+
+.journey-card{
+
+padding:30px;
+
+}
+
+.about-btn{
+
+width:100%;
+
+justify-content:center;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.about-header h2{
+
+font-size:2rem;
+
+}
+
+.about-header p{
+
+font-size:1rem;
+
+}
+
+.about-card{
+
+padding:25px;
+
+}
+
+.timeline-item{
+
+flex-direction:column;
+
+}
+
+.timeline::before{
+
+display:none;
+
+}
+
+.timeline-item span{
+
+margin-bottom:10px;
+
+}
+
 }
