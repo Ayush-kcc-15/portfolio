@@ -1,172 +1,936 @@
-.cert-section {
-  padding: 120px 8%;
-  position: relative;
-  overflow: hidden;
+/*==========================================================
+                    CERTIFICATIONS SECTION
+==========================================================*/
+
+.certifications-section{
+
+    position:relative;
+
+    padding:120px 7%;
+
+    overflow:hidden;
+
 }
 
-/* HEADER */
+.certifications-section::before{
 
-.cert-header {
-  text-align: center;
-  margin-bottom: 60px;
+    content:"";
+
+    position:absolute;
+
+    width:700px;
+
+    height:700px;
+
+    left:50%;
+
+    top:40%;
+
+    transform:translate(-50%,-50%);
+
+    background:radial-gradient(
+
+        circle,
+
+        rgba(198,124,90,.10),
+
+        transparent 70%
+
+    );
+
+    filter:blur(100px);
+
+    z-index:-1;
+
 }
 
-.cert-header span {
-  color: #2563eb;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 2px;
+/*==========================================================
+                    HEADER
+==========================================================*/
+
+.certifications-header{
+
+    max-width:760px;
+
+    margin:auto;
+
+    text-align:center;
+
+    margin-bottom:70px;
+
 }
 
-.cert-header h2 {
-  margin-top: 12px;
-  font-size: 3rem;
-  font-weight: 800;
-  color: var(--heading-color);
+.certifications-header span{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:999px;
+
+    background:rgba(198,124,90,.12);
+
+    color:var(--primary);
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+    margin-bottom:18px;
+
 }
 
-/* FILTER BUTTONS */
+.certifications-header h2{
 
-.company-buttons {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin-bottom: 50px;
+    font-size:clamp(2rem,4vw,3rem);
+
+    color:var(--heading);
+
+    margin-bottom:18px;
+
 }
 
-.company-buttons button {
-  padding: 12px 24px;
-  border-radius: 14px;
-  border: none;
-  cursor: pointer;
+.certifications-header p{
 
-  background: rgba(37, 99, 235, 0.15);
-  border: 1px solid rgba(37, 99, 235, 0.3);
+    color:var(--text);
 
-  color: #60a5fa;
-  font-weight: 600;
+    line-height:1.8;
 
-  transition: 0.3s ease;
+    font-size:1rem;
+
 }
 
-.company-buttons button:hover {
-  background: #2563eb;
-  color: white;
-  transform: translateY(-3px);
+/*==========================================================
+                    GRID
+==========================================================*/
+
+.certifications-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:28px;
+
 }
 
-.company-buttons .active {
-  background: #2563eb;
-  color: white;
+/*==========================================================
+                    CARD
+==========================================================*/
 
-  box-shadow:
-    0 0 15px rgba(37,99,235,.5),
-    0 0 30px rgba(37,99,235,.3);
+.certificate-card{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s ease;
+
+    position:relative;
+
 }
 
-/* CERTIFICATE GRID */
+.certificate-card:hover{
 
-.certificate-list {
-  display: grid;
-  grid-template-columns:
-    repeat(auto-fit, minmax(320px, 1fr));
+    transform:translateY(-8px);
 
-  gap: 25px;
+    border-color:var(--primary);
+
+    box-shadow:
+
+        0 20px 45px rgba(198,124,90,.18);
+
+}
+/*==========================================================
+                    CARD HEADER
+==========================================================*/
+
+.certificate-top{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding:24px;
+
+    cursor:pointer;
+
 }
 
-/* CARD */
+.certificate-logo{
 
-.certificate-card {
-  background: var(--card-bg);
+    width:68px;
 
-  border: 1px solid var(--card-border);
+    height:68px;
 
-  border-radius: 20px;
+    border-radius:18px;
 
-  padding: 25px;
+    display:flex;
 
-  transition: all 0.3s ease;
+    align-items:center;
 
-  position: relative;
-  overflow: hidden;
+    justify-content:center;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#fff;
+
+    flex-shrink:0;
+
+    box-shadow:
+
+        0 10px 25px rgba(0,0,0,.15);
+
+    transition:.35s;
+
 }
 
-.certificate-card::before {
-  content: "";
+.certificate-card:hover .certificate-logo{
 
-  position: absolute;
+    transform:rotate(-8deg) scale(1.08);
 
-  width: 150px;
-  height: 150px;
-
-  top: -60px;
-  right: -60px;
-
-  background: radial-gradient(
-    circle,
-    rgba(37,99,235,.18),
-    transparent
-  );
-
-  transition: 0.4s;
 }
 
-.certificate-card:hover::before {
-  transform: scale(1.5);
+.certificate-info{
+
+    flex:1;
+
 }
 
-.certificate-card:hover {
-  transform: translateY(-8px);
+.certificate-info h3{
 
-  border-color: #2563eb;
+    color:var(--heading);
 
-  box-shadow:
-    0 0 20px rgba(37,99,235,.2),
-    0 0 40px rgba(37,99,235,.12);
+    font-size:1.35rem;
+
+    margin-bottom:8px;
+
+    line-height:1.3;
+
 }
 
-.certificate-card h3 {
-  font-size: 1.1rem;
-  color: var(--heading-color);
-  margin-bottom: 10px;
+.certificate-info span{
+
+    color:var(--text);
+
+    font-size:.92rem;
+
 }
 
-.certificate-company {
-  color: #60a5fa;
-  font-size: .9rem;
-  font-weight: 600;
+.certificate-top svg:last-child{
+
+    color:var(--primary);
+
+    font-size:18px;
+
+    transition:.35s;
+
 }
 
-/* LIGHT MODE */
+.rotate{
 
-body:not(.dark) .certificate-card {
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
+    transform:rotate(180deg);
+
 }
 
-body:not(.dark) .certificate-card h3 {
-  color: #111827;
+/*==========================================================
+                    SKILLS
+==========================================================*/
+
+.certificate-skills{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    padding:0 24px 24px;
+
 }
 
-/* MOBILE */
+.certificate-skills span{
 
-@media (max-width: 768px) {
+    padding:8px 14px;
 
-  .cert-section {
-    padding: 90px 6%;
-  }
+    border-radius:999px;
 
-  .cert-header h2 {
-    font-size: 2.2rem;
-  }
+    background:#FFF4EB;
 
-  .company-buttons {
-    gap: 10px;
-  }
+    color:var(--primary);
 
-  .company-buttons button {
-    padding: 10px 18px;
-    font-size: .9rem;
-  }
+    font-size:.8rem;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.certificate-skills span:hover{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+/*==========================================================
+                EXPANDABLE LIST
+==========================================================*/
+
+.certificate-list{
+
+    padding:0 24px 24px;
+
+    overflow:hidden;
+
+    border-top:1px solid rgba(0,0,0,.08);
+
+}
+
+.certificate-item{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:12px;
+
+    padding:12px 0;
+
+    border-bottom:1px solid rgba(0,0,0,.06);
+
+}
+
+.certificate-item:last-child{
+
+    border-bottom:none;
+
+}
+
+.certificate-item svg{
+
+    color:var(--primary);
+
+    margin-top:4px;
+
+    flex-shrink:0;
+
+}
+
+.certificate-item span{
+
+    color:var(--text);
+
+    line-height:1.6;
+
+    font-size:.92rem;
+
+}
+/*==========================================================
+                PREMIUM HOVER EFFECTS
+==========================================================*/
+
+/* Shine Effect */
+
+.certificate-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-140%;
+
+    left:-45%;
+
+    width:120px;
+
+    height:260%;
+
+    background:rgba(255,255,255,.18);
+
+    transform:rotate(25deg);
+
+    transition:.8s;
+
+    pointer-events:none;
+
+}
+
+.certificate-card:hover::before{
+
+    left:140%;
+
+}
+
+/*==========================================================
+                BORDER GLOW
+==========================================================*/
+
+.certificate-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:24px;
+
+    padding:1px;
+
+    background:linear-gradient(
+
+        135deg,
+
+        rgba(198,124,90,.35),
+
+        transparent,
+
+        rgba(198,124,90,.25)
+
+    );
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+
+    mask-composite:exclude;
+
+    opacity:0;
+
+    transition:.35s;
+
+    pointer-events:none;
+
+}
+
+.certificate-card:hover::after{
+
+    opacity:1;
+
+}
+
+/*==========================================================
+                FLOATING EFFECT
+==========================================================*/
+
+.certificate-card:nth-child(odd){
+
+    animation:certificateFloat1 7s ease-in-out infinite;
+
+}
+
+.certificate-card:nth-child(even){
+
+    animation:certificateFloat2 8s ease-in-out infinite;
+
+}
+
+@keyframes certificateFloat1{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+}
+
+@keyframes certificateFloat2{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(6px);
+
+    }
+
+}
+
+.certificate-card:hover{
+
+    animation:none;
+
+}
+
+/*==========================================================
+                LOGO EFFECT
+==========================================================*/
+
+.certificate-logo{
+
+    transition:
+
+        transform .35s,
+
+        box-shadow .35s;
+
+}
+
+.certificate-card:hover .certificate-logo{
+
+    box-shadow:
+
+        0 15px 30px rgba(198,124,90,.25);
+
+}
+
+/*==========================================================
+                TITLE EFFECT
+==========================================================*/
+
+.certificate-info h3{
+
+    transition:
+
+        color .3s,
+
+        transform .3s;
+
+}
+
+.certificate-card:hover .certificate-info h3{
+
+    color:var(--primary);
+
+    transform:translateX(4px);
+
+}
+
+/*==========================================================
+                SKILL CHIP EFFECT
+==========================================================*/
+
+.certificate-skills span{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.certificate-skills span::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(255,255,255,.35),
+
+        transparent
+
+    );
+
+    transform:translateX(-120%);
+
+}
+
+.certificate-skills span:hover::before{
+
+    animation:chipShine .8s linear;
+
+}
+
+@keyframes chipShine{
+
+    to{
+
+        transform:translateX(120%);
+
+    }
+
+}
+
+/*==========================================================
+                LIST ANIMATION
+==========================================================*/
+
+.certificate-item{
+
+    transition:
+
+        transform .3s,
+
+        background .3s;
+
+}
+
+.certificate-item:hover{
+
+    transform:translateX(8px);
+
+    background:rgba(198,124,90,.05);
+
+}
+
+/*==========================================================
+                DARK MODE
+==========================================================*/
+
+body.dark .certificate-card{
+
+    background:#2B2724;
+
+    border-color:#3A3632;
+
+}
+
+body.dark .certificate-card:hover{
+
+    border-color:#C67C5A;
+
+}
+
+body.dark .certificate-info h3{
+
+    color:#F5F5F5;
+
+}
+
+body.dark .certificate-info span,
+
+body.dark .certificate-item span{
+
+    color:#D2D2D2;
+
+}
+
+body.dark .certificate-skills span{
+
+    background:#3A322D;
+
+}
+
+body.dark .certificate-list{
+
+    border-top-color:#3A3632;
+
+}
+
+/*==========================================================
+                GLOBAL TRANSITIONS
+==========================================================*/
+
+.certifications-section *{
+
+    transition:
+
+        background .3s ease,
+
+        color .3s ease,
+
+        border-color .3s ease,
+
+        transform .3s ease,
+
+        box-shadow .3s ease;
+
+}
+/*==========================================================
+                TABLET
+==========================================================*/
+
+@media (max-width:1200px){
+
+.certifications-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+gap:24px;
+
+}
+
+}
+
+/*==========================================================
+                MOBILE
+==========================================================*/
+
+@media (max-width:768px){
+
+.certifications-section{
+
+padding:90px 6%;
+
+}
+
+.certifications-header{
+
+margin-bottom:55px;
+
+}
+
+.certifications-header h2{
+
+font-size:2.2rem;
+
+}
+
+.certifications-header p{
+
+font-size:.95rem;
+
+line-height:1.7;
+
+}
+
+.certifications-grid{
+
+grid-template-columns:1fr;
+
+gap:22px;
+
+}
+
+.certificate-card{
+
+border-radius:22px;
+
+}
+
+.certificate-top{
+
+padding:20px;
+
+gap:16px;
+
+}
+
+.certificate-logo{
+
+width:60px;
+
+height:60px;
+
+font-size:24px;
+
+border-radius:16px;
+
+}
+
+.certificate-info h3{
+
+font-size:1.15rem;
+
+}
+
+.certificate-info span{
+
+font-size:.85rem;
+
+}
+
+.certificate-skills{
+
+padding:0 20px 20px;
+
+gap:8px;
+
+}
+
+.certificate-skills span{
+
+padding:7px 12px;
+
+font-size:.75rem;
+
+}
+
+.certificate-list{
+
+padding:0 20px 20px;
+
+}
+
+.certificate-item{
+
+padding:10px 0;
+
+}
+
+.certificate-item span{
+
+font-size:.88rem;
+
+}
+
+}
+
+/*==========================================================
+            SMALL MOBILE
+==========================================================*/
+
+@media (max-width:480px){
+
+.certifications-section{
+
+padding:75px 5%;
+
+}
+
+.certifications-header h2{
+
+font-size:1.9rem;
+
+}
+
+.certifications-header span{
+
+font-size:.75rem;
+
+}
+
+.certificate-top{
+
+padding:18px;
+
+}
+
+.certificate-logo{
+
+width:54px;
+
+height:54px;
+
+font-size:22px;
+
+}
+
+.certificate-logo-img{
+
+    width:38px;
+
+    height:38px;
+
+    object-fit:contain;
+
+}
+
+.certificate-info h3{
+
+font-size:1rem;
+
+}
+
+.certificate-info span{
+
+font-size:.8rem;
+
+}
+
+.certificate-skills{
+
+padding:0 18px 18px;
+
+}
+
+.certificate-list{
+
+padding:0 18px 18px;
+
+}
+
+.certificate-item{
+
+gap:10px;
+
+}
+
+.certificate-item span{
+
+font-size:.84rem;
+
+line-height:1.5;
+
+}
+
+}
+
+/*==========================================================
+        ACCESSIBILITY
+==========================================================*/
+
+@media (prefers-reduced-motion:reduce){
+
+.certificate-card,
+.certificate-card:hover,
+.certificate-logo,
+.certificate-skills span,
+.certificate-item{
+
+animation:none;
+
+transition:none;
+
+transform:none;
+
+}
+
+}
+
+/*==========================================================
+            FINAL POLISH
+==========================================================*/
+
+.certificate-card{
+
+display:flex;
+
+flex-direction:column;
+
+height:100%;
+
+}
+
+.certificate-list{
+
+overflow:hidden;
+
+}
+
+.certificate-top{
+
+user-select:none;
+
+}
+
+.certificate-card:hover{
+
+cursor:pointer;
+
 }

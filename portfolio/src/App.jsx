@@ -11,8 +11,6 @@ import Achievements from "./components/Achievements/Achievements";
 import Education from "./components/Education/Education";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
-import BackToTop from "./components/BackToTop/BackToTop";
-
 
 function App() {
   return (
@@ -30,7 +28,7 @@ function App() {
 <Education />
 <Contact />
 <Footer />
-<BackToTop />
+
     </>
   );
 }

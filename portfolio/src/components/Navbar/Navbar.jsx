@@ -83,7 +83,7 @@ function Navbar() {
 
         <li>
           <a
-            href="#certificates"
+            href="#certifications"
             onClick={() => setMenuOpen(false)}
           >
             Certificates

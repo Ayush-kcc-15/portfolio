@@ -1,119 +1,911 @@
-.education-section {
-  padding: 120px 8%;
-  position: relative;
+/*==========================================================
+                    EDUCATION SECTION
+==========================================================*/
+
+.education-section{
+
+    position:relative;
+
+    padding:120px 7%;
+
+    overflow:hidden;
+
 }
 
-.education-header {
-  text-align: center;
-  margin-bottom: 70px;
+.education-section::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        radial-gradient(circle at top left,
+        rgba(198,124,90,.08),
+        transparent 35%),
+
+        radial-gradient(circle at bottom right,
+        rgba(198,124,90,.08),
+        transparent 35%);
+
+    z-index:-2;
+
 }
 
-.education-header span {
-  color: #2563eb;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 2px;
+.education-section::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:700px;
+
+    height:700px;
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    background:
+
+        radial-gradient(circle,
+        rgba(198,124,90,.05),
+        transparent 70%);
+
+    filter:blur(80px);
+
+    z-index:-1;
+
 }
 
-.education-header h2 {
-  margin-top: 12px;
-  font-size: 3rem;
-  font-weight: 800;
-  color: var(--heading-color);
+/*==========================================================
+                    HEADER
+==========================================================*/
+
+.education-header{
+
+    max-width:760px;
+
+    margin:auto;
+
+    text-align:center;
+
+    margin-bottom:90px;
+
 }
 
-/* Timeline */
+.education-header span{
 
-.education-timeline {
-  max-width: 1000px;
-  margin: auto;
+    display:inline-block;
 
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+    padding:8px 18px;
+
+    border-radius:999px;
+
+    background:rgba(198,124,90,.12);
+
+    color:var(--primary);
+
+    font-size:.85rem;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    margin-bottom:18px;
+
 }
 
-.education-card {
-  display: flex;
-  gap: 25px;
-  align-items: center;
+.education-header h2{
 
-  background: var(--card-bg);
+    font-size:clamp(2.2rem,5vw,3.3rem);
 
-  border: 1px solid var(--card-border);
+    color:var(--heading);
 
-  border-radius: 24px;
+    margin-bottom:18px;
 
-  padding: 30px;
-
-  transition: 0.35s ease;
 }
 
-.education-card:hover {
-  transform: translateY(-8px);
+.education-header p{
 
-  border-color: #2563eb;
+    color:var(--text);
 
-  box-shadow:
-    0 0 20px rgba(37,99,235,.2),
-    0 0 50px rgba(37,99,235,.08);
+    line-height:1.9;
+
+    max-width:650px;
+
+    margin:auto;
+
+    font-size:1rem;
+
 }
 
-.education-year {
-  min-width: 150px;
+/*==========================================================
+                    TIMELINE
+==========================================================*/
 
-  background: rgba(37,99,235,.15);
+.education-timeline{
 
-  border: 1px solid rgba(37,99,235,.3);
+    position:relative;
 
-  color: #60a5fa;
+    max-width:1150px;
 
-  padding: 12px 18px;
+    margin:auto;
 
-  border-radius: 12px;
-
-  text-align: center;
-
-  font-weight: 700;
 }
 
-.education-content h3 {
-  color: var(--heading-color);
-  font-size: 1.35rem;
-  margin-bottom: 8px;
+/* Vertical Line */
+
+.education-timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:58px;
+
+    top:0;
+
+    bottom:0;
+
+    width:4px;
+
+    border-radius:30px;
+
+    background:#D8B08C;
+
+    opacity:.75;
+
 }
 
-.education-content h4 {
-  color: #2563eb;
-  margin-bottom: 8px;
-  font-weight: 600;
+/*==========================================================
+                    ROW
+==========================================================*/
+
+.timeline-row{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:40px;
+
+    margin-bottom:55px;
+
+    position:relative;
+
 }
 
-.education-content p {
-  color: var(--text-color);
+.timeline-row:last-child{
+
+    margin-bottom:0;
+
+}
+/*==========================================================
+                    TIMELINE ICON
+==========================================================*/
+
+.timeline-icon{
+
+    width:84px;
+
+    height:84px;
+
+    min-width:84px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:var(--accent);
+
+    color:#fff;
+
+    font-size:34px;
+
+    position:relative;
+
+    z-index:2;
+
+    border:6px solid rgba(255,255,255,.15);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.18),
+        0 0 30px color-mix(in srgb, var(--accent) 35%, transparent);
+
+    transition:.4s ease;
+
 }
 
-/* Light Mode */
+.timeline-row:hover .timeline-icon{
 
-body:not(.dark) .education-card {
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
+    transform:scale(1.08) rotate(-8deg);
+
 }
 
-/* Mobile */
+/*==========================================================
+                    EDUCATION CARD
+==========================================================*/
 
-@media (max-width: 768px) {
-  .education-card {
-    flex-direction: column;
-    text-align: center;
-  }
+.education-card{
 
-  .education-year {
-    min-width: auto;
-    width: 100%;
-  }
+    flex:1;
 
-  .education-header h2 {
-    font-size: 2.2rem;
-  }
+    position:relative;
+
+    background:var(--card);
+
+    border-radius:30px;
+
+    padding:35px;
+
+    border:2px solid var(--accent);
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s ease;
+
+}
+
+.education-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+        0 22px 50px rgba(0,0,0,.15);
+
+}
+
+/*==========================================================
+                    SHINE EFFECT
+==========================================================*/
+
+.education-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-120%;
+
+    left:-35%;
+
+    width:120px;
+
+    height:260%;
+
+    background:rgba(255,255,255,.12);
+
+    transform:rotate(25deg);
+
+    transition:.8s;
+
+}
+
+.education-card:hover::before{
+
+    left:140%;
+
+}
+
+/*==========================================================
+                    TOP SECTION
+==========================================================*/
+
+.education-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    margin-bottom:28px;
+
+    gap:20px;
+
+}
+
+/*==========================================================
+                    YEAR CIRCLE
+==========================================================*/
+
+.year-circle{
+
+    width:82px;
+
+    height:82px;
+
+    border-radius:50%;
+
+    color:#fff;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:.82rem;
+
+    font-weight:700;
+
+    line-height:1.15;
+
+    flex-shrink:0;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.15);
+
+}
+
+/*==========================================================
+                    GRADE CIRCLE
+==========================================================*/
+
+.grade-circle{
+
+    width:100px;
+
+    height:100px;
+
+    border-radius:50%;
+
+    background:#F7F1EC;
+
+    color:var(--accent);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    font-size:.78rem;
+
+    font-weight:700;
+
+    line-height:1.2;
+
+    border:2px solid rgba(198,124,90,.18);
+
+    flex-shrink:0;
+
+}
+
+body.dark .grade-circle{
+
+    background:#322D29;
+
+}
+/*==========================================================
+                    CONTENT
+==========================================================*/
+
+.education-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+/*==========================================================
+                    DEGREE
+==========================================================*/
+
+.education-content h3{
+
+    font-size:1.6rem;
+
+    font-weight:700;
+
+    color:var(--heading);
+
+    line-height:1.4;
+
+    transition:.35s ease;
+
+}
+
+.timeline-row:hover .education-content h3{
+
+    color:var(--accent);
+
+}
+
+/*==========================================================
+                    INSTITUTE
+==========================================================*/
+
+.education-content h4{
+
+    font-size:1.08rem;
+
+    font-weight:600;
+
+    color:var(--heading);
+
+}
+
+/*==========================================================
+                    BOARD
+==========================================================*/
+
+.education-content p{
+
+    color:var(--text);
+
+    font-size:.95rem;
+
+    line-height:1.8;
+
+}
+
+/*==========================================================
+                    BORDER GLOW
+==========================================================*/
+
+.education-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:30px;
+
+    padding:1px;
+
+    background:linear-gradient(
+
+        135deg,
+
+        var(--accent),
+
+        transparent,
+
+        rgba(255,255,255,.2)
+
+    );
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+
+    mask-composite:exclude;
+
+    opacity:0;
+
+    transition:.35s;
+
+    pointer-events:none;
+
+}
+
+.education-card:hover::after{
+
+    opacity:1;
+
+}
+
+/*==========================================================
+                    ICON GLOW
+==========================================================*/
+
+.timeline-icon{
+
+    transition:
+
+        transform .35s,
+
+        box-shadow .35s;
+
+}
+
+.timeline-row:hover .timeline-icon{
+
+    box-shadow:
+
+        0 18px 40px rgba(0,0,0,.2),
+
+        0 0 35px color-mix(in srgb, var(--accent) 45%, transparent);
+
+}
+
+/*==========================================================
+                    YEAR CIRCLE
+==========================================================*/
+
+.year-circle span{
+
+    display:block;
+
+}
+
+/*==========================================================
+                    GRADE CIRCLE
+==========================================================*/
+
+.grade-circle span{
+
+    display:block;
+
+}
+
+/*==========================================================
+                    DARK MODE
+==========================================================*/
+
+body.dark .education-card{
+
+    background:#2B2724;
+
+    border-color:#3C3733;
+
+}
+
+body.dark .education-content h3,
+
+body.dark .education-content h4{
+
+    color:#F5F5F5;
+
+}
+
+body.dark .education-content p{
+
+    color:#D4D4D4;
+
+}
+
+body.dark .education-card:hover{
+
+    border-color:var(--accent);
+
+}
+/*==========================================================
+                RESPONSIVE
+==========================================================*/
+
+@media (max-width:992px){
+
+.education-timeline::before{
+
+left:38px;
+
+}
+
+.timeline-row{
+
+gap:24px;
+
+}
+
+.timeline-icon{
+
+width:70px;
+
+height:70px;
+
+min-width:70px;
+
+font-size:28px;
+
+}
+
+.education-card{
+
+padding:28px;
+
+}
+
+.year-circle{
+
+width:70px;
+
+height:70px;
+
+font-size:.75rem;
+
+}
+
+.grade-circle{
+
+width:88px;
+
+height:88px;
+
+font-size:.72rem;
+
+}
+
+.education-content h3{
+
+font-size:1.35rem;
+
+}
+
+}
+
+@media (max-width:768px){
+
+.education-section{
+
+padding:90px 6%;
+
+}
+
+.education-header{
+
+margin-bottom:60px;
+
+}
+
+.education-header h2{
+
+font-size:2.2rem;
+
+}
+
+.education-header p{
+
+font-size:.95rem;
+
+}
+
+.education-timeline::before{
+
+left:28px;
+
+}
+
+.timeline-row{
+
+gap:18px;
+
+margin-bottom:40px;
+
+}
+
+.timeline-icon{
+
+width:56px;
+
+height:56px;
+
+min-width:56px;
+
+font-size:22px;
+
+border-width:4px;
+
+}
+
+.education-card{
+
+padding:22px;
+
+border-radius:22px;
+
+}
+
+.education-top{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:18px;
+
+}
+
+.year-circle{
+
+width:64px;
+
+height:64px;
+
+font-size:.72rem;
+
+}
+
+.grade-circle{
+
+width:82px;
+
+height:82px;
+
+font-size:.68rem;
+
+align-self:flex-end;
+
+}
+
+.education-content h3{
+
+font-size:1.15rem;
+
+}
+
+.education-content h4{
+
+font-size:1rem;
+
+}
+
+.education-content p{
+
+font-size:.9rem;
+
+}
+
+}
+
+@media (max-width:480px){
+
+.education-section{
+
+padding:75px 5%;
+
+}
+
+.education-header h2{
+
+font-size:1.9rem;
+
+}
+
+.education-timeline::before{
+
+left:22px;
+
+}
+
+.timeline-row{
+
+gap:14px;
+
+}
+
+.timeline-icon{
+
+width:44px;
+
+height:44px;
+
+min-width:44px;
+
+font-size:18px;
+
+}
+
+.education-card{
+
+padding:18px;
+
+}
+
+.year-circle{
+
+width:56px;
+
+height:56px;
+
+font-size:.65rem;
+
+}
+
+.grade-circle{
+
+width:72px;
+
+height:72px;
+
+font-size:.62rem;
+
+}
+
+.education-content h3{
+
+font-size:1rem;
+
+}
+
+.education-content h4{
+
+font-size:.9rem;
+
+}
+
+.education-content p{
+
+font-size:.82rem;
+
+line-height:1.6;
+
+}
+
+}
+
+/*==========================================================
+                ACCESSIBILITY
+==========================================================*/
+
+@media (prefers-reduced-motion:reduce){
+
+.timeline-row,
+.timeline-icon,
+.education-card{
+
+animation:none;
+
+transition:none;
+
+transform:none;
+
+}
+
+}
+
+/*==========================================================
+                FINAL POLISH
+==========================================================*/
+
+.education-card{
+
+display:flex;
+
+flex-direction:column;
+
+height:100%;
+
+}
+
+.education-card *{
+
+position:relative;
+
+z-index:2;
+
+}
+
+.timeline-icon svg{
+
+font-size:inherit;
+
+}
+
+.year-circle,
+.grade-circle{
+
+user-select:none;
+
+}
+
+.timeline-row:hover{
+
+cursor:default;
+
 }

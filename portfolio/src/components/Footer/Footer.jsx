@@ -1,51 +1,93 @@
 import "./Footer.css";
 
-import {
-  FaGithub,
-  FaLinkedin,
-  FaEnvelope,
-} from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaArrowUp } from "react-icons/fa";
 
 function Footer() {
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <footer className="footer">
 
       <div className="footer-container">
 
-        <div className="footer-brand">
+        {/* Left */}
 
-          <h2>Ayush Kumar</h2>
+        <div className="footer-left">
+
+          <h2>
+
+            Ayush Kumar
+
+          </h2>
 
           <p>
-            B.Tech CSE Student | Developer |
-            Innovator | Patent Enthusiast
+
+            Passionate Computer Science student focused on
+            Full Stack Development, Artificial Intelligence,
+            Cloud Computing and Cybersecurity.
+
           </p>
 
         </div>
 
-        <div className="footer-links">
+        {/* Center */}
 
-          <h3>Quick Links</h3>
+        <div className="footer-center">
 
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
+          <h3>
+
+            Quick Links
+
+          </h3>
+
+          <a href="#home">
+
+            Home
+
+          </a>
+
+          <a href="#about">
+
+            About
+
+          </a>
+
+          <a href="#projects">
+
+            Projects
+
+          </a>
+
+          <a href="#contact">
+
+            Contact
+
+          </a>
 
         </div>
 
-        <div className="footer-social">
+        {/* Right */}
 
-          <h3>Connect</h3>
+        <div className="footer-right">
 
-          <div className="social-icons">
+          <h3>
+
+            Connect
+
+          </h3>
+
+          <div className="footer-socials">
 
             <a
-              href="https://www.linkedin.com/in/ayush-kumar-659ab0329"
-              target="_blank"
-              rel="noreferrer"
+              href="mailto:ayush.kccitm@gmail.com"
             >
-              <FaLinkedin />
+              <FaEnvelope />
             </a>
 
             <a
@@ -56,8 +98,12 @@ function Footer() {
               <FaGithub />
             </a>
 
-            <a href="mailto:ayush.kccitm@gmail.com">
-              <FaEnvelope />
+            <a
+              href="https://www.linkedin.com/in/ayush-kumar-659ab0329"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaLinkedin />
             </a>
 
           </div>
@@ -66,9 +112,25 @@ function Footer() {
 
       </div>
 
+      {/* Bottom */}
+
       <div className="footer-bottom">
 
-        © 2026 Ayush Kumar. All Rights Reserved.
+        <p>
+
+          © {new Date().getFullYear()} Ayush Kumar.
+          All Rights Reserved.
+
+        </p>
+
+        <button
+          className="scroll-top"
+          onClick={scrollToTop}
+        >
+
+          <FaArrowUp />
+
+        </button>
 
       </div>
 

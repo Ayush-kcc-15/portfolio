@@ -1,93 +1,51 @@
-import { useState } from "react";
 import "./Certifications.css";
 
+import { motion } from "framer-motion";
+
+import { certifications } from "./certificationData";
+
+import CertificationCard from "./CertificationCard";
+
 function Certifications() {
-  const [selected, setSelected] = useState("AWS");
-
-  const certifications = {
-    AWS: [
-      "Fundamentals of ML & AI",
-      "AWS Billing and Cost Management",
-      "Build with Amazon EC2",
-      "AWS Cloud Practitioner",
-      "AWS CLI Basics",
-    ],
-
-    IBM: [
-      "Intelligent by Design",
-      "Cybersecurity: On the Offense",
-      "Ethical AI",
-      "Foundations in Generative AI",
-      "Introduction to LLMs",
-    ],
-
-    Microsoft: [
-      "Describe Cloud Services",
-      "Cloud Computing",
-      "Cloud Infrastructure",
-      "Cloud Service Types",
-    ],
-
-    Unstop: [
-      "AWS with AI",
-      "Cloud Computing with AI",
-      "Cybersecurity Mastery",
-      "GitHub Workflow Mastery",
-      "HackCraft 3.0",
-    ],
-
-    HPLife: [
-      "AI for Beginners",
-      "Critical Thinking in AI Era",
-    ],
-  };
-
   return (
     <section
-      id="certificates"
-      className="cert-section"
+      id="certifications"
+      className="certifications-section"
     >
-      {/* HEADER */}
-      <div className="cert-header">
+      {/* Header */}
+
+      <motion.div
+        className="certifications-header"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         <span>CERTIFICATIONS</span>
-        <h2>Professional Certifications</h2>
-      </div>
 
-      {/* FILTER BUTTONS */}
-      <div className="company-buttons">
-        {Object.keys(certifications).map((company) => (
-          <button
-            key={company}
-            className={
-              selected === company
-                ? "active"
-                : ""
-            }
-            onClick={() =>
-              setSelected(company)
-            }
-          >
-            {company}
-          </button>
+        <h2>
+          Continuous Learning Journey
+        </h2>
+
+        <p>
+          Over <strong>40+</strong> certifications and
+          digital badges earned across Artificial
+          Intelligence, Cloud Computing,
+          Cybersecurity, Full Stack Development,
+          Programming and Professional Skills.
+        </p>
+      </motion.div>
+
+      {/* Cards */}
+
+      <div className="certifications-grid">
+        {certifications.map((item, index) => (
+          <CertificationCard
+            key={index}
+            item={item}
+            index={index}
+          />
         ))}
-      </div>
-
-      {/* CERTIFICATE GRID */}
-      <div className="certificate-list">
-        {certifications[selected].map(
-          (item, index) => (
-            <div
-              className="certificate-card"
-              key={index}
-            >
-              <h3>{item}</h3>
-
-              <span className="certificate-company">
-                {selected}
-              </span>
-            </div>
-          )
-        )}
       </div>
     </section>
   );

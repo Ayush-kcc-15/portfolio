@@ -1,260 +1,159 @@
-/* ==========================================================
-                    PROJECTS SECTION
-========================================================== */
+/*==========================================================
+                    PROJECT SECTION
+==========================================================*/
 
 .projects-section{
-    padding:120px 8%;
     position:relative;
+    padding:110px 7%;
     overflow:hidden;
 }
 
 .projects-section::before{
-
     content:"";
-
     position:absolute;
-
-    width:700px;
-    height:700px;
-
+    width:650px;
+    height:650px;
     left:50%;
-    top:45%;
-
+    top:40%;
     transform:translate(-50%,-50%);
-
-    background:radial-gradient(
-        circle,
-        rgba(198,124,90,.10),
-        transparent 70%
-    );
-
-    filter:blur(100px);
-
+    background:radial-gradient(circle,
+        rgba(198,124,90,.12),
+        transparent 70%);
+    filter:blur(90px);
     z-index:-1;
-
 }
 
-/* ==========================================================
+/*==========================================================
                     HEADER
-========================================================== */
+==========================================================*/
 
 .projects-header{
-
-    max-width:760px;
-
-    margin:0 auto 70px;
-
+    width:min(720px,100%);
+    margin:auto;
     text-align:center;
-
+    margin-bottom:70px;
 }
 
 .projects-header span{
-
     display:inline-block;
-
-    padding:8px 18px;
-
-    border-radius:30px;
-
+    padding:8px 20px;
+    border-radius:999px;
     background:rgba(198,124,90,.12);
-
     color:var(--primary);
-
     font-weight:600;
-
+    font-size:.9rem;
     letter-spacing:2px;
-
-    margin-bottom:18px;
-
 }
 
 .projects-header h2{
-
-    font-size:3rem;
-
+    margin:18px 0;
+    font-size:clamp(2rem,4vw,3rem);
     color:var(--heading);
-
-    margin-bottom:18px;
-
     line-height:1.2;
-
 }
 
 .projects-header p{
-
-    max-width:680px;
-
-    margin:auto;
-
     color:var(--text);
-
-    font-size:1.05rem;
-
     line-height:1.8;
-
+    font-size:1rem;
 }
 
-/* ==========================================================
+/*==========================================================
                     GRID
-========================================================== */
+==========================================================*/
 
 .projects-grid{
-
     display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:24px;
-
-    align-items:start;
-
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:26px;
+    align-items:stretch;
 }
 
-/* ==========================================================
+/*==========================================================
                     CARD
-========================================================== */
+==========================================================*/
 
 .project-card{
-
-    position:relative;
+    display:flex;
+    flex-direction:column;
 
     background:var(--card);
 
     border:1px solid var(--border);
 
-    border-radius:28px;
+    border-radius:24px;
 
     overflow:hidden;
-
-    backdrop-filter:blur(18px);
 
     box-shadow:var(--shadow);
 
-    transition:.35s ease;
+    position:relative;
 
-}
-
-/* Make featured same size */
-
-.project-card.featured{
-
-    grid-column:auto;
-
+    transition:
+        transform .35s,
+        box-shadow .35s,
+        border-color .35s;
 }
 
 .project-card:hover{
-
-    transform:translateY(-10px);
-
+    transform:translateY(-8px);
     border-color:var(--primary);
-
     box-shadow:
-        0 20px 45px rgba(198,124,90,.18);
-
+        0 18px 45px rgba(198,124,90,.18);
 }
 
-/* Shine */
-
-.project-card::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:-140%;
-
-    left:-45%;
-
-    width:120px;
-
-    height:240%;
-
-    transform:rotate(25deg);
-
-    background:rgba(255,255,255,.16);
-
-    transition:.8s;
-
-    z-index:5;
-
-}
-
-.project-card:hover::before{
-
-    left:135%;
-
-}
-/* ==========================================================
+/*==========================================================
                     IMAGE
-========================================================== */
+==========================================================*/
 
 .project-image{
-
-    position:relative;
-
+    width:100%;
+    aspect-ratio:16/9;
     overflow:hidden;
-
-    height:180px;
-
-    background:#F5F3EF;
-
+    background:#F5F2EE;
+    position:relative;
 }
 
 .project-image img{
-
     width:100%;
-
     height:100%;
-
     object-fit:cover;
-
-    transition:
-        transform .6s ease,
-        filter .4s ease;
-
-}
-
-.project-image::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:linear-gradient(
-        to top,
-        rgba(0,0,0,.25),
-        transparent
-    );
-
-    opacity:0;
-
-    transition:.35s;
-
-}
-
-.project-card:hover .project-image::after{
-
-    opacity:1;
-
+    transition:transform .55s ease;
 }
 
 .project-card:hover .project-image img{
-
-    transform:scale(1.08);
-
-    filter:brightness(1.05);
-
+    transform:scale(1.06);
 }
 
-/* ==========================================================
+.project-image::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.15),
+        transparent
+    );
+    opacity:0;
+    transition:.35s;
+}
+
+.project-card:hover .project-image::after{
+    opacity:1;
+}
+/*==========================================================
                     CONTENT
-========================================================== */
+==========================================================*/
 
 .project-content{
 
-    padding:20px;
+    display:flex;
+
+    flex-direction:column;
+
+    flex:1;
+
+    padding:22px;
 
 }
 
@@ -266,7 +165,7 @@
 
     color:var(--primary);
 
-    font-size:.9rem;
+    font-size:.82rem;
 
     font-weight:600;
 
@@ -278,17 +177,19 @@
 
 .project-content h3{
 
-    font-size:1.5rem;
+    font-size:1.55rem;
 
     color:var(--heading);
 
-    margin-bottom:12px;
+    margin-bottom:14px;
+
+    line-height:1.3;
 
     transition:.3s;
 
 }
 
-.project-card:hover .project-content h3{
+.project-card:hover h3{
 
     color:var(--primary);
 
@@ -296,16 +197,21 @@
 
 .project-content p{
 
-    font-size:.9rem;
+    color:var(--text);
 
-    line-height:1.6;
+    font-size:.93rem;
 
-    min-height:110px;
+    line-height:1.7;
+
+    margin-bottom:20px;
+
+    flex:1;
 
 }
-/* ==========================================================
+
+/*==========================================================
                     TECH TAGS
-========================================================== */
+==========================================================*/
 
 .tags{
 
@@ -315,17 +221,17 @@
 
     gap:10px;
 
-    margin-bottom:24px;
+    margin-bottom:22px;
 
 }
 
 .tags span{
 
-    padding:6px 12px;
+    padding:7px 14px;
 
-    border-radius:30px;
+    border-radius:999px;
 
-    background:#FFF3E9;
+    background:#FFF4EB;
 
     color:var(--primary);
 
@@ -333,7 +239,7 @@
 
     font-weight:600;
 
-    transition:.3s ease;
+    transition:.3s;
 
 }
 
@@ -345,45 +251,49 @@
 
 }
 
-/* ==========================================================
+/*==========================================================
                     BUTTONS
-========================================================== */
+==========================================================*/
 
 .project-buttons{
 
-    display:flex;
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
 
     gap:14px;
+
+    margin-top:auto;
 
 }
 
 .project-buttons a{
 
-    flex:1;
-
     display:flex;
-
-    justify-content:center;
 
     align-items:center;
 
-    gap:10px;
+    justify-content:center;
 
-    text-decoration:none;
+    gap:8px;
 
-    padding:10px 16px;
+    padding:12px;
 
     border-radius:14px;
 
+    font-size:.92rem;
+
     font-weight:600;
 
-    font-size:.88rem;
+    text-decoration:none;
 
-    transition:.3s ease;
+    transition:.35s;
 
 }
 
-/* GitHub */
+/*==========================================================
+                    GITHUB BUTTON
+==========================================================*/
 
 .github-btn{
 
@@ -391,7 +301,7 @@
 
     color:#fff;
 
-    border:2px solid transparent;
+    border:2px solid var(--primary);
 
 }
 
@@ -403,23 +313,25 @@
 
 .github-btn:hover{
 
-    background:#b86d46;
+    background:#B86D46;
 
-    color:#fff;
+    border-color:#B86D46;
 
-    transform:translateY(-4px);
+    transform:translateY(-3px);
 
 }
 
-/* Demo */
+/*==========================================================
+                    DEMO BUTTON
+==========================================================*/
 
 .demo-btn{
 
     background:transparent;
 
-    border:2px solid var(--primary);
-
     color:var(--primary);
+
+    border:2px solid var(--primary);
 
 }
 
@@ -429,7 +341,7 @@
 
     color:#fff;
 
-    transform:translateY(-4px);
+    transform:translateY(-3px);
 
 }
 
@@ -439,19 +351,41 @@
 
 }
 
-/* ==========================================================
+/*==========================================================
+                    ICONS
+==========================================================*/
+
+.project-buttons svg{
+
+    transition:.35s;
+
+}
+
+.project-buttons a:hover svg{
+
+    transform:scale(1.15);
+
+}
+
+/*==========================================================
                     DARK MODE
-========================================================== */
+==========================================================*/
+
+body.dark .project-card{
+
+    background:#2A2623;
+
+}
 
 body.dark .project-image{
 
-    background:#24211F;
+    background:#22201E;
 
 }
 
 body.dark .tags span{
 
-    background:#3B322C;
+    background:#3A342F;
 
 }
 
@@ -459,21 +393,25 @@ body.dark .github-btn{
 
     background:#C67C5A;
 
+    border-color:#C67C5A;
+
     color:#fff;
 
 }
 
 body.dark .github-btn:hover{
 
-    background:#D98D68;
+    background:#D68A63;
+
+    border-color:#D68A63;
 
 }
 
 body.dark .demo-btn{
 
-    border-color:#C67C5A;
+    color:#E7D1BD;
 
-    color:#EAD7C0;
+    border-color:#C67C5A;
 
 }
 
@@ -484,11 +422,114 @@ body.dark .demo-btn:hover{
     color:#fff;
 
 }
-/* ==========================================================
-                PART 3 - PREMIUM ANIMATIONS
-========================================================== */
+/*==========================================================
+                PREMIUM HOVER EFFECTS
+==========================================================*/
 
-/* Floating Animation */
+/* Shine Effect */
+
+.project-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-120%;
+
+    left:-45%;
+
+    width:120px;
+
+    height:260%;
+
+    background:rgba(255,255,255,.18);
+
+    transform:rotate(25deg);
+
+    transition:.8s;
+
+    pointer-events:none;
+
+    z-index:5;
+
+}
+
+.project-card:hover::before{
+
+    left:135%;
+
+}
+
+/* Premium Border Glow */
+
+.project-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:24px;
+
+    padding:1px;
+
+    background:linear-gradient(
+
+        135deg,
+
+        rgba(198,124,90,.35),
+
+        transparent,
+
+        rgba(198,124,90,.25)
+
+    );
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+
+    mask-composite:exclude;
+
+    opacity:0;
+
+    transition:.35s;
+
+    pointer-events:none;
+
+}
+
+.project-card:hover::after{
+
+    opacity:1;
+
+}
+
+/*==========================================================
+                    IMAGE EFFECTS
+==========================================================*/
+
+.project-card:hover .project-image{
+
+    box-shadow:
+        inset 0 0 50px rgba(198,124,90,.12);
+
+}
+
+.project-card:hover img{
+
+    transform:scale(1.08);
+
+    filter:brightness(1.04);
+
+}
+
+/*==========================================================
+                FLOATING ANIMATION
+==========================================================*/
 
 .project-card:nth-child(1){
 
@@ -540,89 +581,17 @@ body.dark .demo-btn:hover{
 
 }
 
-/* Hover Lift */
+/* Prevent conflict with hover */
 
 .project-card:hover{
 
-    transform:translateY(-14px) scale(1.01);
-
-    box-shadow:
-        0 25px 60px rgba(198,124,90,.22);
+    animation:none;
 
 }
 
-/* Image Overlay */
-
-.project-image::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:linear-gradient(
-        to top,
-        rgba(0,0,0,.18),
-        transparent 60%
-    );
-
-    opacity:0;
-
-    transition:.4s ease;
-
-    z-index:2;
-
-}
-
-.project-card:hover .project-image::before{
-
-    opacity:1;
-
-}
-
-/* Image Glow */
-
-.project-card:hover .project-image{
-
-    box-shadow:
-        inset 0 0 60px rgba(198,124,90,.15);
-
-}
-
-/* Heading Animation */
-
-.project-content h3{
-
-    transition:
-        color .3s ease,
-        transform .3s ease;
-
-}
-
-.project-card:hover h3{
-
-    transform:translateX(6px);
-
-}
-
-/* Paragraph */
-
-.project-content p{
-
-    transition:.35s;
-
-}
-
-.project-card:hover p{
-
-    opacity:.92;
-
-}
-
-/* ==========================================================
+/*==========================================================
                     TAG EFFECT
-========================================================== */
+==========================================================*/
 
 .tags span{
 
@@ -646,7 +615,7 @@ body.dark .demo-btn:hover{
 
         transparent,
 
-        rgba(255,255,255,.45),
+        rgba(255,255,255,.35),
 
         transparent
 
@@ -672,9 +641,9 @@ body.dark .demo-btn:hover{
 
 }
 
-/* ==========================================================
-                    BUTTON SHINE
-========================================================== */
+/*==========================================================
+                    BUTTON EFFECT
+==========================================================*/
 
 .project-buttons a{
 
@@ -698,7 +667,7 @@ body.dark .demo-btn:hover{
 
         transparent,
 
-        rgba(255,255,255,.25),
+        rgba(255,255,255,.18),
 
         transparent
 
@@ -716,110 +685,355 @@ body.dark .demo-btn:hover{
 
 }
 
-/* Icon Animation */
-
-.project-buttons svg{
-
-    transition:.35s;
-
-}
-
 .project-buttons a:hover svg{
 
-    transform:
-
-        rotate(-12deg)
-
-        scale(1.15);
+    transform:scale(1.15);
 
 }
 
-/* ==========================================================
-                    CARD BORDER GLOW
-========================================================== */
+/*==========================================================
+                    HEADING EFFECT
+==========================================================*/
 
-.project-card::after{
+.project-content h3{
 
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    border-radius:28px;
-
-    padding:1px;
-
-    background:linear-gradient(
-
-        135deg,
-
-        rgba(198,124,90,.35),
-
-        transparent,
-
-        rgba(198,124,90,.25)
-
-    );
-
-    -webkit-mask:
-
-        linear-gradient(#fff 0 0) content-box,
-
-        linear-gradient(#fff 0 0);
-
-    -webkit-mask-composite:xor;
-
-    mask-composite:exclude;
-
-    opacity:0;
-
-    transition:.4s;
-
-    pointer-events:none;
+    transition:
+        color .3s,
+        transform .3s;
 
 }
 
-.project-card:hover::after{
+.project-card:hover h3{
 
-    opacity:1;
+    transform:translateX(4px);
 
 }
 
-/* ==========================================================
-                    DARK MODE POLISH
-========================================================== */
+/*==========================================================
+                    DARK MODE
+==========================================================*/
 
 body.dark .project-card{
 
-    background:#2A2623;
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.35);
 
 }
 
 body.dark .project-card:hover{
 
     box-shadow:
-
-        0 25px 65px rgba(198,124,90,.18);
-
-}
-
-body.dark .project-image::before{
-
-    background:linear-gradient(
-
-        to top,
-
-        rgba(0,0,0,.35),
-
-        transparent
-
-    );
+        0 22px 55px rgba(198,124,90,.18);
 
 }
 
-body.dark .tags span:hover{
+body.dark .project-card::before{
+
+    background:rgba(255,255,255,.06);
+
+}
+/*==========================================================
+                FEATURED BADGE
+==========================================================*/
+
+.project-card.featured .project-image::before{
+
+    content:"Featured";
+
+    position:absolute;
+
+    top:16px;
+
+    left:16px;
+
+    padding:8px 14px;
+
+    border-radius:30px;
+
+    background:rgba(198,124,90,.95);
 
     color:#fff;
+
+    font-size:.75rem;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    z-index:10;
+
+}
+
+/*==========================================================
+                TABLET
+==========================================================*/
+
+@media (max-width:1200px){
+
+.projects-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+gap:24px;
+
+}
+
+}
+
+/*==========================================================
+                MOBILE
+==========================================================*/
+
+@media (max-width:768px){
+
+.projects-section{
+
+padding:90px 6%;
+
+}
+
+.projects-header{
+
+margin-bottom:50px;
+
+}
+
+.projects-header h2{
+
+font-size:2.2rem;
+
+}
+
+.projects-header p{
+
+font-size:.95rem;
+
+line-height:1.7;
+
+}
+
+.projects-grid{
+
+grid-template-columns:1fr;
+
+gap:24px;
+
+}
+
+.project-card{
+
+border-radius:22px;
+
+}
+
+.project-image{
+
+aspect-ratio:16/10;
+
+}
+
+.project-content{
+
+padding:20px;
+
+}
+
+.project-content h3{
+
+font-size:1.4rem;
+
+}
+
+.project-content p{
+
+font-size:.9rem;
+
+min-height:auto;
+
+}
+
+.tags{
+
+gap:8px;
+
+}
+
+.tags span{
+
+padding:6px 12px;
+
+font-size:.75rem;
+
+}
+
+.project-buttons{
+
+grid-template-columns:1fr;
+
+gap:12px;
+
+}
+
+.project-buttons a{
+
+width:100%;
+
+padding:12px;
+
+font-size:.9rem;
+
+}
+
+}
+
+/*==========================================================
+            SMALL MOBILE
+==========================================================*/
+
+@media (max-width:480px){
+
+.projects-section{
+
+padding:75px 5%;
+
+}
+
+.projects-header h2{
+
+font-size:1.9rem;
+
+}
+
+.projects-header span{
+
+font-size:.75rem;
+
+}
+
+.project-image{
+
+aspect-ratio:16/11;
+
+}
+
+.project-content{
+
+padding:18px;
+
+}
+
+.project-content h3{
+
+font-size:1.3rem;
+
+}
+
+.project-content p{
+
+font-size:.88rem;
+
+line-height:1.6;
+
+}
+
+.tags{
+
+gap:6px;
+
+}
+
+.tags span{
+
+font-size:.72rem;
+
+padding:6px 10px;
+
+}
+
+.project-buttons a{
+
+font-size:.85rem;
+
+padding:11px;
+
+}
+
+}
+
+/*==========================================================
+        REDUCED MOTION
+==========================================================*/
+
+@media (prefers-reduced-motion:reduce){
+
+.project-card,
+.project-card:hover,
+.project-image img,
+.project-buttons a,
+.tags span{
+
+animation:none;
+
+transition:none;
+
+transform:none;
+
+}
+
+}
+
+/*==========================================================
+            DARK MODE IMPROVEMENTS
+==========================================================*/
+
+body.dark .project-card{
+
+background:#2B2724;
+
+border-color:#3A3632;
+
+}
+
+body.dark .project-card:hover{
+
+border-color:#C67C5A;
+
+}
+
+body.dark .project-content h3{
+
+color:#F5F5F5;
+
+}
+
+body.dark .project-content p{
+
+color:#CFCFCF;
+
+}
+
+body.dark .project-image{
+
+background:#1F1D1B;
+
+}
+
+/*==========================================================
+            SMOOTH TRANSITIONS
+==========================================================*/
+
+.projects-section *{
+
+transition:
+
+background .3s ease,
+
+color .3s ease,
+
+border-color .3s ease,
+
+box-shadow .3s ease,
+
+transform .3s ease;
 
 }

@@ -1,68 +1,111 @@
-import "./Patents.css";
-import { FaShieldAlt, FaTram } from "react-icons/fa";
+import "./patents.css";
 
-function Patent() {
-  const patents = [
+import { motion } from "framer-motion";
+
+import {
+  FaIndustry,
+  FaMountain,
+  FaRoad,
+  FaTram,
+  FaCheckCircle,
+} from "react-icons/fa";
+
+const patents = [
   {
+    icon: <FaIndustry />,
     title: "Automatic Gate System for Industrial Security",
     status: "Patent Published",
-    icon: <FaShieldAlt />,
-    desc: "AI-powered industrial gate automation system with vehicle identification, OTP verification, and secure access control.",
+    description:
+      "A smart industrial security solution featuring intelligent vehicle identification, automated access control, OTP verification and real-time monitoring to improve operational safety and efficiency.",
+    technologies: ["IoT", "Computer Vision", "Automation", "Security"],
   },
 
   {
-    title: "Real Time Geological Traffic Integrated Carry capacity in hilly Areas",
+    icon: <FaMountain />,
+    title:
+      "Real Time Geological Traffic Integrated Carry Capacity in Hilly Areas",
     status: "Patent Application Filed",
-    icon: <FaShieldAlt />,
-    desc: "An intelligent platform for traffic regulation based on geological conditions and carrying capacity.",
+    description:
+      "An intelligent traffic and geological monitoring framework that combines real-time sensing, AI analytics and environmental data to improve transportation safety in hilly regions.",
+    technologies: ["AI", "IoT", "Sensors", "Cloud"],
   },
 
   {
-    title: "Cumulative Impact of Vehicular Vibrations and Monsoonal Rainfall on Landslide Triggering in Nainital",
+    icon: <FaRoad />,
+    title:
+      "Cumulative Impact of Vehicular Vibrations and Monsoonal Rainfall on Landslide Triggering in Nainital",
     status: "Patent Application Filed",
-    icon: <FaShieldAlt />,
-    desc: "A research-based system analyzing the combined effects of vehicular vibrations and monsoonal rainfall on landslide triggering in the Nainital region to improve risk assessment and disaster mitigation.",
+    description:
+      "A research-driven system analysing traffic vibrations and rainfall to predict landslide risks and support disaster mitigation.",
+    technologies: ["GIS", "Data Analysis", "Geology", "AI"],
   },
 
   {
+    icon: <FaTram />,
     title: "Integrated Ropeway System for Smart Transportation",
     status: "Patent Application Filed",
-    icon: <FaTram />,
-    desc: "Smart ropeway monitoring system using IoT sensors and AI for safety, maintenance prediction, and transport efficiency.",
+    description:
+      "A smart ropeway transportation system with intelligent monitoring and passenger management for safer mobility in mountainous regions.",
+    technologies: ["Smart Mobility", "IoT", "AI", "Transportation"],
   },
 ];
+
+function Patents() {
   return (
-    <section id="patents" className="patent-section">
-
-      <div className="patent-header">
+    <section id="patents" className="patents-section">
+      <motion.div
+        className="patents-header"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         <span>PATENTS</span>
-        <h2>Patents & Research Innovations</h2>
-      </div>
 
-      <div className="patent-grid">
+        <h2>Innovation & Intellectual Property</h2>
 
+        <p>
+          Research-driven innovations focused on solving real-world problems
+          through intelligent systems, automation and emerging technologies.
+        </p>
+      </motion.div>
+
+      <div className="patents-grid">
         {patents.map((patent, index) => (
-          <div className="patent-card" key={index}>
-
+          <motion.div
+            key={index}
+            className="patent-card"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.6,
+              delay: index * 0.15,
+            }}
+            viewport={{ once: true }}
+          >
             <div className="patent-icon">
               {patent.icon}
             </div>
 
+            <div className="patent-status">
+              <FaCheckCircle />
+              <span>{patent.status}</span>
+            </div>
+
             <h3>{patent.title}</h3>
 
-            <p>{patent.desc}</p>
+            <p>{patent.description}</p>
 
-            <span className="patent-status">
-              {patent.status}
-            </span>
-
-          </div>
+            <div className="patent-tags">
+              {patent.technologies.map((tech, i) => (
+                <span key={i}>{tech}</span>
+              ))}
+            </div>
+          </motion.div>
         ))}
-
       </div>
-
     </section>
   );
 }
 
-export default Patent;
+export default Patents;
