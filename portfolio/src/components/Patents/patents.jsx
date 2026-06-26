@@ -1,4 +1,4 @@
-import "./patents.css";
+import "./Patents.css";
 
 import { motion } from "framer-motion";
 
