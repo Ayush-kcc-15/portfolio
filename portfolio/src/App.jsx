@@ -1,3 +1,8 @@
+import { useState } from "react";
+import { motion } from "framer-motion";
+
+import Loader from "./components/Loader/Loader";
+
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import Stats from "./components/Stats/Stats";
@@ -12,22 +17,65 @@ import Education from "./components/Education/Education";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 
+
 function App() {
+
+  const [loading, setLoading] = useState(true);
+
   return (
     <>
-      <Navbar />
-      <Hero />
-      <Stats />
-      <About />
-      <Skills />
-      <TechStack />
-      <Projects />
-<Patents />
-<Certifications />
-<Achievements />
-<Education />
-<Contact />
-<Footer />
+
+      {loading ? (
+
+        <Loader
+          onFinish={() => setLoading(false)}
+        />
+
+      ) : (
+
+        <motion.div
+  initial={{
+    opacity: 0,
+    y: 40,
+  }}
+  animate={{
+    opacity: 1,
+    y: 0,
+  }}
+  transition={{
+    duration: 0.8,
+    ease: "easeOut",
+  }}
+>
+
+  <Navbar />
+
+  <Hero />
+
+  <Stats />
+
+  <About />
+
+  <Skills />
+
+  <TechStack />
+
+  <Projects />
+
+  <Patents />
+
+  <Certifications />
+
+  <Achievements />
+
+  <Education />
+
+  <Contact />
+
+  <Footer />
+
+</motion.div>
+      )}
 
     </>
   );

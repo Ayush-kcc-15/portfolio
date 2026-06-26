@@ -1,0 +1,1083 @@
+/*==========================================================
+                    LOADER
+==========================================================*/
+
+.loader{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    z-index:99999;
+
+    background:#F8F5F2;
+
+}
+
+/*=========================
+        BACKGROUND
+=========================*/
+
+.loader-background{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+}
+
+/*=========================
+        FLOATING CIRCLES
+=========================*/
+
+.bg-circle{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(90px);
+
+    animation:float 8s ease-in-out infinite;
+
+}
+
+.bg1{
+
+    width:420px;
+
+    height:420px;
+
+    background:rgba(198,124,90,.18);
+
+    top:-120px;
+
+    left:-100px;
+
+}
+
+.bg2{
+
+    width:350px;
+
+    height:350px;
+
+    background:rgba(198,124,90,.10);
+
+    bottom:-100px;
+
+    right:-80px;
+
+    animation-delay:2s;
+
+}
+
+.bg3{
+
+    width:260px;
+
+    height:260px;
+
+    background:rgba(198,124,90,.12);
+
+    left:50%;
+
+    top:55%;
+
+    transform:translate(-50%,-50%);
+
+    animation-delay:4s;
+
+}
+
+@keyframes float{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-35px);
+
+    }
+
+}
+
+/*==========================================================
+                TERMINAL WINDOW
+==========================================================*/
+
+.terminal-window{
+
+    position:relative;
+
+    width:min(900px,92vw);
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    backdrop-filter:blur(20px);
+
+    background:rgba(255,255,255,.82);
+
+    border:1px solid rgba(198,124,90,.25);
+
+    box-shadow:
+
+        0 30px 70px rgba(0,0,0,.12),
+
+        0 0 45px rgba(198,124,90,.10);
+
+    z-index:10;
+
+}
+
+/*==========================================================
+                HEADER
+==========================================================*/
+
+.terminal-header{
+
+    height:58px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 22px;
+
+    background:#F1ECE7;
+
+    border-bottom:1px solid rgba(198,124,90,.18);
+
+}
+
+.terminal-title{
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+    color:#4A4A4A;
+
+    font-family:"Fira Code", monospace;
+
+    letter-spacing:.5px;
+
+}
+
+/*==========================================================
+            WINDOW BUTTONS
+==========================================================*/
+
+.terminal-controls{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+.terminal-controls span{
+
+    width:13px;
+
+    height:13px;
+
+    border-radius:50%;
+
+    display:block;
+
+}
+
+.red{
+
+    background:#FF5F57;
+
+}
+
+.yellow{
+
+    background:#FEBC2E;
+
+}
+
+.green{
+
+    background:#28C840;
+
+}
+/*==========================================================
+                    TERMINAL BODY
+==========================================================*/
+
+.terminal-body{
+
+    padding:40px;
+
+    font-family:"Fira Code","Consolas","Courier New",monospace;
+
+}
+
+/*==========================================================
+                        TITLE
+==========================================================*/
+
+.terminal-body h1{
+
+    font-size:2.2rem;
+
+    font-weight:700;
+
+    color:#2E2A27;
+
+    letter-spacing:2px;
+
+    margin-bottom:10px;
+
+}
+
+.subtitle{
+
+    color:#6D6A67;
+
+    font-size:.95rem;
+
+    margin-bottom:35px;
+
+    line-height:1.7;
+
+}
+
+/*==========================================================
+                    COMMAND
+==========================================================*/
+
+.terminal-command{
+
+    display:flex;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+    margin-bottom:35px;
+
+    font-size:1rem;
+
+}
+
+.prompt{
+
+    color:#C67C5A;
+
+    font-weight:700;
+
+}
+
+.command{
+
+    color:#2E2A27;
+
+}
+
+.cursor{
+
+    color:#C67C5A;
+
+    font-weight:700;
+
+    animation:blink .9s infinite;
+
+}
+
+@keyframes blink{
+
+    0%,50%{
+
+        opacity:1;
+
+    }
+
+    51%,100%{
+
+        opacity:0;
+
+    }
+
+}
+
+/*==========================================================
+                    OUTPUT
+==========================================================*/
+
+.terminal-output{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+/*==========================================================
+                    LOG LINE
+==========================================================*/
+
+.terminal-line{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    opacity:.35;
+
+    color:#7A7773;
+
+    font-size:.95rem;
+
+    transition:all .35s ease;
+
+}
+
+.terminal-line.active{
+
+    opacity:1;
+
+    color:#2E2A27;
+
+    transform:translateX(4px);
+
+}
+
+/*==========================================================
+                    ICON
+==========================================================*/
+
+.check-icon{
+
+    color:#C67C5A;
+
+    font-size:17px;
+
+    flex-shrink:0;
+
+}
+
+.pending-dot{
+
+    color:#B8B2AB;
+
+    font-size:22px;
+
+    line-height:1;
+
+    width:17px;
+
+    text-align:center;
+
+}
+
+/*==========================================================
+                    ACTIVE GLOW
+==========================================================*/
+
+.terminal-line.active{
+
+    text-shadow:
+
+        0 0 12px rgba(198,124,90,.15);
+
+}
+
+/*==========================================================
+                TERMINAL SCROLL
+==========================================================*/
+
+.terminal-output{
+
+    max-height:320px;
+
+    overflow:hidden;
+
+}
+/*==========================================================
+                    PROGRESS
+==========================================================*/
+
+.loader-progress{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-top:35px;
+
+}
+
+.loader-progress-track{
+
+    flex:1;
+
+    height:10px;
+
+    background:#E7E2DC;
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(198,124,90,.15);
+
+    position:relative;
+
+}
+
+.loader-progress-fill{
+
+    height:100%;
+
+    width:0;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+        90deg,
+        #C67C5A,
+        #D89A73,
+        #C67C5A
+    );
+
+    background-size:200% 100%;
+
+    animation:
+        progressFlow 2s linear infinite,
+        progressPulse 2s ease-in-out infinite;
+
+}
+
+.progress-text{
+
+    width:55px;
+
+    text-align:right;
+
+    font-weight:700;
+
+    color:#C67C5A;
+
+    font-size:.9rem;
+
+}
+
+/*==========================================================
+                    LAUNCH BOX
+==========================================================*/
+
+.launch-box{
+
+    margin-top:35px;
+
+    padding:22px;
+
+    border-radius:18px;
+
+    background:rgba(198,124,90,.08);
+
+    border:1px solid rgba(198,124,90,.15);
+
+    text-align:center;
+
+    animation:launchAppear .6s ease;
+
+}
+
+.launch-box h3{
+
+    color:#2E2A27;
+
+    font-size:1.25rem;
+
+    margin-bottom:10px;
+
+}
+
+.launch-box p{
+
+    color:#6D6A67;
+
+    margin-bottom:8px;
+
+}
+
+.launch-box span{
+
+    color:#C67C5A;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+}
+
+/*==========================================================
+                TERMINAL FLOAT
+==========================================================*/
+
+.terminal-window{
+
+    animation:
+
+        terminalAppear .7s ease,
+
+        terminalFloat 6s ease-in-out infinite;
+
+}
+
+@keyframes terminalAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:
+
+            translateY(30px)
+
+            scale(.96);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+
+            translateY(0)
+
+            scale(1);
+
+    }
+
+}
+
+@keyframes terminalFloat{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+}
+
+/*==========================================================
+                PROGRESS ANIMATION
+==========================================================*/
+
+@keyframes progressFlow{
+
+    from{
+
+        background-position:0 0;
+
+    }
+
+    to{
+
+        background-position:200% 0;
+
+    }
+
+}
+
+@keyframes progressPulse{
+
+    0%,100%{
+
+        box-shadow:
+
+            0 0 12px rgba(198,124,90,.18);
+
+    }
+
+    50%{
+
+        box-shadow:
+
+            0 0 26px rgba(198,124,90,.35);
+
+    }
+
+}
+
+/*==========================================================
+                LAUNCH ANIMATION
+==========================================================*/
+
+@keyframes launchAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*==========================================================
+                SCAN LINE
+==========================================================*/
+
+.terminal-window::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(255,255,255,.08),
+
+        transparent
+
+    );
+
+    transform:translateX(-120%);
+
+    animation:scan 5s linear infinite;
+
+    pointer-events:none;
+
+}
+
+@keyframes scan{
+
+    from{
+
+        transform:translateX(-120%);
+
+    }
+
+    to{
+
+        transform:translateX(120%);
+
+    }
+
+}
+/*==========================================================
+                RESPONSIVE
+==========================================================*/
+
+@media (max-width:900px){
+
+.terminal-window{
+
+width:95vw;
+
+}
+
+.terminal-body{
+
+padding:32px;
+
+}
+
+.terminal-body h1{
+
+font-size:1.8rem;
+
+}
+
+.subtitle{
+
+font-size:.9rem;
+
+}
+
+}
+
+@media (max-width:768px){
+
+.loader{
+
+padding:20px;
+
+}
+
+.terminal-window{
+
+border-radius:18px;
+
+}
+
+.terminal-header{
+
+height:52px;
+
+padding:0 18px;
+
+}
+
+.terminal-title{
+
+font-size:.8rem;
+
+}
+
+.terminal-body{
+
+padding:24px;
+
+}
+
+.terminal-body h1{
+
+font-size:1.5rem;
+
+}
+
+.subtitle{
+
+font-size:.82rem;
+
+margin-bottom:28px;
+
+}
+
+.terminal-command{
+
+font-size:.88rem;
+
+}
+
+.terminal-line{
+
+font-size:.82rem;
+
+gap:10px;
+
+}
+
+.loader-progress{
+
+margin-top:28px;
+
+}
+
+.launch-box{
+
+padding:18px;
+
+margin-top:25px;
+
+}
+
+.launch-box h3{
+
+font-size:1.1rem;
+
+}
+
+}
+
+@media (max-width:480px){
+
+.loader{
+
+padding:14px;
+
+}
+
+.terminal-window{
+
+width:100%;
+
+border-radius:16px;
+
+}
+
+.terminal-header{
+
+height:46px;
+
+padding:0 15px;
+
+}
+
+.terminal-controls span{
+
+width:11px;
+
+height:11px;
+
+}
+
+.terminal-body{
+
+padding:18px;
+
+}
+
+.terminal-body h1{
+
+font-size:1.25rem;
+
+letter-spacing:1px;
+
+}
+
+.subtitle{
+
+font-size:.78rem;
+
+}
+
+.terminal-command{
+
+font-size:.75rem;
+
+}
+
+.terminal-line{
+
+font-size:.72rem;
+
+}
+
+.loader-progress{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:10px;
+
+}
+
+.loader-progress-track{
+
+width:100%;
+
+}
+
+.progress-text{
+
+width:auto;
+
+}
+
+.launch-box{
+
+padding:16px;
+
+}
+
+.launch-box h3{
+
+font-size:1rem;
+
+}
+
+.launch-box p{
+
+font-size:.82rem;
+
+}
+
+.launch-box span{
+
+font-size:.82rem;
+
+}
+
+}
+
+/*==========================================================
+                DARK MODE
+==========================================================*/
+
+body.dark .loader{
+
+background:#161311;
+
+}
+
+body.dark .terminal-window{
+
+background:rgba(33,29,26,.94);
+
+border:1px solid rgba(198,124,90,.18);
+
+}
+
+body.dark .terminal-header{
+
+background:#2A2522;
+
+border-bottom:1px solid rgba(198,124,90,.12);
+
+}
+
+body.dark .terminal-title{
+
+color:#DDD7D1;
+
+}
+
+body.dark .terminal-body h1{
+
+color:#F6F4F2;
+
+}
+
+body.dark .subtitle{
+
+color:#BEB7B0;
+
+}
+
+body.dark .command{
+
+color:#ECE8E4;
+
+}
+
+body.dark .terminal-line{
+
+color:#9F978F;
+
+}
+
+body.dark .terminal-line.active{
+
+color:#F5F2EF;
+
+}
+
+body.dark .loader-progress-track{
+
+background:#2F2A27;
+
+border-color:#423A35;
+
+}
+
+body.dark .launch-box{
+
+background:#2A2522;
+
+border-color:#403933;
+
+}
+
+body.dark .launch-box h3{
+
+color:#F6F4F2;
+
+}
+
+body.dark .launch-box p{
+
+color:#BEB7B0;
+
+}
+
+/*==========================================================
+                ACCESSIBILITY
+==========================================================*/
+
+@media (prefers-reduced-motion:reduce){
+
+.loader *{
+
+animation:none !important;
+
+transition:none !important;
+
+transform:none !important;
+
+}
+
+}
+
+/*==========================================================
+                SMOOTH TRANSITIONS
+==========================================================*/
+
+.loader *{
+
+transition:
+
+background .3s ease,
+
+color .3s ease,
+
+border-color .3s ease,
+
+box-shadow .3s ease,
+
+transform .3s ease;
+
+}
+
+/*==========================================================
+                SCROLL LOCK
+==========================================================*/
+
+body.loading{
+
+overflow:hidden;
+
+}

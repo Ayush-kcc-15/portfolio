@@ -11,6 +11,8 @@ import {
 function About() {
   return (
     <section id="about" className="about-section">
+      
+
 
       {/* Header */}
 
@@ -217,5 +219,6 @@ function About() {
     </section>
   );
 }
+
 
 export default About;

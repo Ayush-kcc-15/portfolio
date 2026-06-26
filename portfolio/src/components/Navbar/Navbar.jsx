@@ -128,6 +128,7 @@ function Navbar() {
           href="/Ayush_Kumar_Resume.pdf"
           download
           className="nav-resume-btn"
+          
         >
           Download Resume
         </a>
