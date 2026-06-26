@@ -34,7 +34,7 @@ const skillCategories = [
     icon: <FaDatabase />,
     skills: [
       { icon: <FaNodeJs />, name: "Node.js", level: 85 },
-      { icon: <FaDatabase />, name: "MongoDB", level: 82 },
+      { icon: <FaDatabase />, name: "MongoDB", level: 70 },
       { icon: <FaDatabase />, name: "MySQL", level: 80 },
     ],
   },
@@ -43,7 +43,7 @@ const skillCategories = [
     title: "Programming",
     icon: <FaCode />,
     skills: [
-      { icon: <FaJava />, name: "Java", level: 85 },
+      { icon: <FaJava />, name: "Java", level: 60 },
       { icon: <FaPython />, name: "Python", level: 88 },
     ],
   },
@@ -52,8 +52,8 @@ const skillCategories = [
     title: "Cloud & Tools",
     icon: <FaTools />,
     skills: [
-      { icon: <FaAws />, name: "AWS", level: 82 },
-      { icon: <FaGitAlt />, name: "Git", level: 90 },
+      { icon: <FaAws />, name: "AWS", level: 55 },
+      { icon: <FaGitAlt />, name: "Git", level: 80 },
       { icon: <FaGithub />, name: "GitHub", level: 92 },
       { icon: <FaCode />, name: "VS Code", level: 96 },
     ],
